@@ -19,8 +19,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Global Styles */
-
 h1 {
   font-size: 50px;
   line-height: 64px;
@@ -103,8 +101,8 @@ button.lbh-banyak {
   border-radius: 4px;
   cursor: pointer;
   position: absolute;
-  top: 183rem;
-  left: 47rem;
+  top: 183%;
+  left: 47%;
   border: none;
   outline: none;
   transition: 0.2s;
@@ -112,7 +110,7 @@ button.lbh-banyak {
 
 .normal1 {
   position: relative;
-  right: 12rem;
+  right: 12px;
   font-size: 10px;
   font-weight: 500;
   padding: 9px 20px;
@@ -157,19 +155,15 @@ body {
   height: 20px;
   border-radius: 10em;
   padding: 0 0.5em;
-
   box-shadow: inset 0 8px 60px rgba(0,0,0, .1),
               inset 0 8px 8px rgba(0,0,0, .1),
               inset 0 -4px 4px rgba(0,0,0, .1);
-
   position: relative;
   left: 0%;
   display: flex;
   align-items: center;
   position: relative;
   left: 50%;
-
-
   cursor: pointer;
 }
 
@@ -178,25 +172,17 @@ body {
   width: 3em;
   height: 3em;
   border-radius: 50%;
-
   position: absolute;
   box-shadow: 0 8px 40px rgba(0,0,0, .2);
-
   transition: transform .3s ease;
 }
 
 .btn__icon-container{
   width: 100%;
   height: 100%;
-
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.btn__icon{
-  color: var(--light-icon-color);
-  font-size: 2rem;
 }
 
 .btn__icon.animated{
@@ -209,121 +195,30 @@ body {
   }
 }
 
-body.darkmode{
-  background-color: hsl(218, 39%, 14%);
-}
-
-.darkmode .logo {
-  filter: brightness(200%);
-}
-
-.darkmode #hero {
-  background-image: url("/assets/img/ijul1.png");
-}
-
-.darkmode #header {
-  background: hsl(218, 39%, 14%);
-}
-
-.darkmode h1 {
-  color: #fff;
-}
-
-.darkmode h2 {
-  color: #fff;
-}
-
-.darkmode h4 {
-  color: #fff;
-}
-
-.darkmode h5 {
-  color: #fff;
-}
-
-.darkmode h6 {
-  color: #fff;
-}
-
-.darkmode p {
-  font-size: 16px;
-  color: #fff;
-  margin: 15px 0 20px 0;
-}
-
-.darkmode #navbar li a {
-  color: #fff;
-}
-
-.darkmode .navbar-form-search {
-  background-color: hsl(218, 39%, 14%);
-  color: #fff;
-}
-
-.darkmode a {
-  color: #fff;
-}
-
-.darkmode .des span {
-  color: #fff;
-}
-
-.darkmode #product1 .pro .des h5 {
-  color: #fff;
-}
-
-.darkmode .icon {
-  color: #fff;
-}
-
-.darkmode .btn{
-  box-shadow: inset 0 8px 60px rgba(0,0,0, .3),
-              inset 8px 0 8px rgba(0,0,0, .3),
-              inset 0 -4px 4px rgba(0,0,0, .3);
-}
-
-.darkmode #product1 .pro .des span {
-  color: #fff;
-}
-
-.darkmode #product1 .pro {
-  border: 1px solid hsl(214, 84%, 56%);
-}
-
-.darkmode .btn__indicator{
-  transform: translateX(2em);
-  background-color: var(--dark-color);
-  box-shadow: 0 8px 40px rgba(0,0,0, .3);
-}
-
-.darkmode .btn__icon{
-  color: var(--dark-icon-color);
-}
-
 #header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px 150px;
   background: #fbfcff;
-  height: 7rem;
+  height: 112px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
   z-index: 999;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%; /* agar header menempati lebar layar */
+  width: 100%;
 }
 
 .adminn {
   position: relative;
-  left: 78rem;
+  left: 1248px;
   display: inline-flex;
 }
 
 .user {
   position: relative;
-  left: 80rem;
+  left: 1280px;
   display: inline-flex;
 }
 
@@ -408,7 +303,7 @@ body.darkmode{
 
 .navbar-form {
   position: relative;
-  right: 19rem;
+  right: 304px;
   top: 35px;
   width: 50%;
   border: none;
@@ -458,25 +353,25 @@ body.darkmode{
   position: relative;
   text-decoration: none;
   bottom: 45px;
-  right: 15.5rem;
+  right: 248px;
 }
 
 .kaca-guest {
   position: relative;
   text-decoration: none;
   bottom: 45px;
-  right: 15.5rem;
+  right: 248px;
 }
 
 .eli {
   position: relative;
-  left: 73rem;
+  left: 1168px;
   display: inline-flex;
 }
 
 .eli-guest {
   position: relative;
-  left: 73rem;
+  left: 1168px;
   display: inline-flex;
 }
 
@@ -608,7 +503,7 @@ body.darkmode{
     text-align: center; 
     margin-bottom: 150px;
     position: relative;
-    top: 8rem;
+    top: 128px;
 }
 
 .recomen {
@@ -719,7 +614,7 @@ body.darkmode{
 .kosong {
   text-align: center;
   position: relative;
-  left: 38rem;
+  left: 608px;
 }
 
 #product1 .pro {
@@ -769,7 +664,7 @@ body.darkmode{
 #product1 .pro .halal-logo {
   width: 48px;
   position: absolute;
-  left: 18rem;
+  left: 288px;
   bottom: 20px;
 }
 
@@ -980,8 +875,7 @@ footer .install img {
   background: hsl(214, 84%, 56%);
   color: #FFF;
   position: relative;
-  right: 19rem;
-
+  right: 304px;
 }
 
 #prodetails .single-pro-details span {
@@ -1024,7 +918,7 @@ footer .install img {
   border: transparent;
   background-color: transparent;
   position: fixed;
-  left: 43.5rem;
+  left: 696px;
   bottom: 36px;
 }
 
@@ -1081,6 +975,7 @@ footer .install img {
     background: #eee;
     width: -webkit-fill-available;
     height: 152px;
+    width: 100%;
     margin: 10px 0;
     padding: 10px;
     resize: inherit;
@@ -1138,7 +1033,7 @@ footer .install img {
 .category-info {
   position: relative;
   bottom: 40px;
-  left: 30rem;
+  left: 480px;
 }
 
 .links-login > a:hover {
@@ -1172,42 +1067,42 @@ footer .install img {
 /* Media query untuk layar dengan lebar maksimum 1024px */
 @media screen and (max-width: 1024px) {
   .navbar-form {
-    right: 19rem;
+    right: 304px;
     top: 35px;
     width: 10%;
     border: none;
   }
   
   .navbar-form-search {
-    width: 40rem;
-    right: 16rem;
+    width: 640px;
+    right: 256px;
   }
 
   .navbar-form-search-guest {
-    width: 40rem;
-    right: 16rem;
+    width: 640px;
+    right: 256px;
   }
 
   .kaca {
-    right: 14.5rem;
+    right: 232px;
   }
 
   .kaca-guest {
-    right: 14.5rem;
+    right: 232px;
   }
 
   .eli {
-    left: 31.5rem;
+    left: 504px;
   }
 
   .eli-guest {
-    left: 31.5rem;
+    left: 504px;
   }
 
   #hero {
     height: 100vh;
     width: 99%;
-    background-position: top 1rem left 1rem;
+    background-position: top 16px left 16px;
     background-repeat: no-repeat;
   }
 
