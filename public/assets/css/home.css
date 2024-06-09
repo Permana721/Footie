@@ -1,0 +1,1816 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root{
+  --color: #9176FF;
+  --dark-color: #2b2b2b;
+  --dark-icon-color: #fff;
+  --light-color: #f7f7f7;
+  --light-icon-color: #FFDE59;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Global Styles */
+
+h1 {
+  font-size: 50px;
+  line-height: 64px;
+  color: #222;
+}
+
+h2 {
+  font-size: 46px;
+  line-height: 54px;
+  color: #222;
+}
+
+h4 {
+  font-size: 20px;
+  color: #222;
+}
+
+h6 {
+  font-weight: 700;
+  font-size: 12px;
+}
+
+p {
+  font-size: 16px;
+  color: #465b52;
+  margin: 15px 0 20px 0;
+}
+
+.section-p1 {
+  padding: 40px 80px;
+}
+
+.section-r1 {
+  padding: 60px 80px;
+  display: grid;
+  position: relative; 
+  top: 100px; 
+  margin-bottom: 255px;
+}
+
+.section-m1 {
+  margin: 40px 0;
+}
+
+button.normal {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 15px 30px;
+  color: #000;
+  background-color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: 0.2s;
+}
+
+button.normall {
+  font-size: 10px;
+  font-weight: 500;
+  padding: 10px 20px;
+  color: #000;
+  background-color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  left: 80px;
+  top: 10px;
+  border: none;
+  outline: none;
+  transition: 0.2s;
+}
+
+button.lbh-banyak {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 20px 23px;
+  color: #000;
+  background-color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  position: absolute;
+  top: 183rem;
+  left: 47rem;
+  border: none;
+  outline: none;
+  transition: 0.2s;
+}
+
+.normal1 {
+  position: relative;
+  right: 12rem;
+  font-size: 10px;
+  font-weight: 500;
+  padding: 9px 20px;
+  border-radius: 4px;
+  position: relative;
+  left: 100px;
+  top: 10px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: #fff;
+  color: hsl(214, 84%, 56%);
+  border: 1px solid hsl(214, 84%, 56%);
+  transition: 0.2s;
+}
+
+.normal2 {
+  position: relative;
+  font-size: 10px;
+  font-weight: 500;
+  padding: 9px 20px;
+  border-radius: 4px;
+  position: relative;
+  left: 100px;
+  top: 10px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: #fff;
+  color: hsl(214, 84%, 56%);
+  border: 1px solid hsl(214, 84%, 56%);
+  transition: 0.2s;
+}
+
+body {
+  width: 100%;
+}
+
+.btn{
+  background-color: #fff;
+  width: 55px;
+  height: 20px;
+  border-radius: 10em;
+  padding: 0 0.5em;
+
+  box-shadow: inset 0 8px 60px rgba(0,0,0, .1),
+              inset 0 8px 8px rgba(0,0,0, .1),
+              inset 0 -4px 4px rgba(0,0,0, .1);
+
+  position: relative;
+  left: 0%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  left: 50%;
+
+
+  cursor: pointer;
+}
+
+.btn__indicator{
+  background-color: #fff;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+
+  position: absolute;
+  box-shadow: 0 8px 40px rgba(0,0,0, .2);
+
+  transition: transform .3s ease;
+}
+
+.btn__icon-container{
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn__icon{
+  color: var(--light-icon-color);
+  font-size: 2rem;
+}
+
+.btn__icon.animated{
+  animation: spin 0.5s;
+}
+
+@keyframes spin{
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body.darkmode{
+  background-color: hsl(218, 39%, 14%);
+}
+
+.darkmode .logo {
+  filter: brightness(200%);
+}
+
+.darkmode #hero {
+  background-image: url("/assets/img/ijul1.png");
+}
+
+.darkmode #header {
+  background: hsl(218, 39%, 14%);
+}
+
+.darkmode h1 {
+  color: #fff;
+}
+
+.darkmode h2 {
+  color: #fff;
+}
+
+.darkmode h4 {
+  color: #fff;
+}
+
+.darkmode h5 {
+  color: #fff;
+}
+
+.darkmode h6 {
+  color: #fff;
+}
+
+.darkmode p {
+  font-size: 16px;
+  color: #fff;
+  margin: 15px 0 20px 0;
+}
+
+.darkmode #navbar li a {
+  color: #fff;
+}
+
+.darkmode .navbar-form-search {
+  background-color: hsl(218, 39%, 14%);
+  color: #fff;
+}
+
+.darkmode a {
+  color: #fff;
+}
+
+.darkmode .des span {
+  color: #fff;
+}
+
+.darkmode #product1 .pro .des h5 {
+  color: #fff;
+}
+
+.darkmode .icon {
+  color: #fff;
+}
+
+.darkmode .btn{
+  box-shadow: inset 0 8px 60px rgba(0,0,0, .3),
+              inset 8px 0 8px rgba(0,0,0, .3),
+              inset 0 -4px 4px rgba(0,0,0, .3);
+}
+
+.darkmode #product1 .pro .des span {
+  color: #fff;
+}
+
+.darkmode #product1 .pro {
+  border: 1px solid hsl(214, 84%, 56%);
+}
+
+.darkmode .btn__indicator{
+  transform: translateX(2em);
+  background-color: var(--dark-color);
+  box-shadow: 0 8px 40px rgba(0,0,0, .3);
+}
+
+.darkmode .btn__icon{
+  color: var(--dark-icon-color);
+}
+
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 150px;
+  background: #fbfcff;
+  height: 7rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /* agar header menempati lebar layar */
+}
+
+.adminn {
+  position: relative;
+  left: 78rem;
+  display: inline-flex;
+}
+
+.user {
+  position: relative;
+  left: 80rem;
+  display: inline-flex;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li {
+  position: relative;
+    right: 220px;
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+    bottom: 35px;
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 12px;
+    display: inline-flex;
+    color: #1a1a1a;
+    transition: 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color:  hsl(214, 84%, 56%);
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background:  hsl(214, 84%, 56%);
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+.logo-btn {
+  width: 25%;
+  height: 70%;
+  cursor: pointer;
+  position: relative;
+  right: 200px;
+  background-color: transparent;
+  border: 0px;
+}
+
+.hal {
+  position: relative;
+  bottom: 33px;
+  right: 40px;
+}
+
+.logo-atas-guest {
+  position: relative;
+  right: 130px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.logo-atas {
+  position: relative;
+  right: 110px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.logo-btn {
+  width: 25%;
+  height: 70%;
+  cursor: pointer;
+  position: relative;
+  right: 200px;
+  background-color: transparent;
+  border: 0px;
+}
+
+.navbar-form {
+  position: relative;
+  right: 19rem;
+  top: 35px;
+  width: 50%;
+  border: none;
+}
+
+.navbar-form-search {
+  background: #fff;
+  width: 188%;
+  padding: 10px 53px;
+  position: relative;
+  right: 39%;
+  bottom: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 3px solid hsl(214, 84%, 56%);
+  outline: none;
+}
+
+.navbar-form-search-guest {
+  background: #fff;
+  width: 188%;
+  padding: 10px 53px;
+  position: relative;
+  right: 39%;
+  bottom: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 3px solid hsl(214, 84%, 56%);
+  outline: none;
+}
+
+.navbar-form-search::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
+}
+
+.navbar-form-search-guest::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
+}
+
+.kaca {
+  position: relative;
+  text-decoration: none;
+  bottom: 45px;
+  right: 15.5rem;
+}
+
+.kaca-guest {
+  position: relative;
+  text-decoration: none;
+  bottom: 45px;
+  right: 15.5rem;
+}
+
+.eli {
+  position: relative;
+  left: 73rem;
+  display: inline-flex;
+}
+
+.eli-guest {
+  position: relative;
+  left: 73rem;
+  display: inline-flex;
+}
+
+.transparent-button {
+  background-color: transparent;
+  border: none;
+  list-style: none;
+}
+
+.action {
+  position: relative;
+  top: 25px;
+  left: 50px;
+}
+
+.ac-name {
+  position: relative;
+  bottom: 38px;
+  left: 68px;
+  font-weight: 550; 
+  cursor: pointer;
+  font-size: 15px;
+  margin: 0;
+}
+
+.action .profile {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.action .profile img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.action .menu {
+  position: absolute;
+  top: 120px;
+  right: -10px;
+  padding: 10px 20px;
+  background: #fff;
+  width: 250px;
+  box-shadow: 10px 10px 30px rgba(0,0,0,0.1);
+  border-radius: 15px;
+  transition: 0.5s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.action .menu.active {
+  top: 80px;
+  visibility: visible;
+  opacity: 1;
+}
+
+.action .menu::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  right: 28px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  transform: rotate(45deg);
+}
+
+.action .menu h3 {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  padding: 20px 0;
+  font-weight: 500;
+  font-size: 18px;
+  color: #555;
+  line-height: 1.2em;
+}
+
+.action .menu h3 span {
+  font-size: 14px;
+  color: #cecece;
+  font-weight: 400;
+}
+
+.action .menu ul li {
+  list-style: none;
+  padding: 10px 0;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+}
+
+.action .menu ul li img {
+  max-width: 20px;
+  margin-right: 10px;
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+.action .menu ul li:hover img {
+  opacity: 1;
+}
+
+.action .menu ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  transition: 0.5s;
+}
+
+.action .menu ul li:hover a {
+  color: #4063ff;
+}
+
+#mobile {
+  display: none;
+  align-items: center;
+}
+
+.text-containerr {
+    text-align: center; 
+    margin-bottom: 150px;
+    position: relative;
+    top: 8rem;
+}
+
+.recomen {
+  position: relative;
+  bottom: 20px;
+}
+
+#hero {
+    background-image: url("/assets/img/logo/ijul.jpg");
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: top 15% right 0;
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#hero h4 {
+    padding-bottom: 15px;
+}
+
+#hero h1 {
+    color:  hsl(214, 84%, 56%);
+}
+
+#hero button {
+    background-image: url("/assets/img/logo/button.png");
+    background-color: transparent;
+    color:  hsl(214, 84%, 56%);
+    border: 0;
+    position: relative;
+    right: 30px;
+    padding: 14px 80px 14px 40px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.kategori {
+    text-align: center;
+    border: 1px solid hsl(214, 84%, 56%);
+    border-radius: 6px;
+    margin: 45px;
+}
+
+.kategori h2 {
+  position: relative;
+  top: 20px;
+}
+
+#feature {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#feature .fe-box {
+  cursor: pointer;
+  width: 180px;
+  text-align: center;
+  padding: 25px 15px;
+  border-radius: 4px;
+  margin: 15px 0;
+}
+
+#feature .fe-box:hover {
+  box-shadow: 10px 10px 54px rgba(70, 62, 221, 0.1);
+}
+
+#feature .fe-box h6 {
+  display: inline-block;
+  padding: 9px 8px 6px 8px;
+  line-height: 1;
+  border-radius: 4px;
+  color:  hsl(214, 84%, 56%);
+  background-color: #f1ddfd;
+}
+
+#feature .fe-box img {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+#product1 {
+  text-align: center;
+  justify-content: flex-start;
+}
+
+.pro {
+  text-decoration: none;
+  position: relative;
+  margin: 150px 1px;
+  justify-content: flex-start;
+}
+
+#product1 .pro-container {
+  display: flex;
+  padding-top: 20px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.kosong {
+  text-align: center;
+  position: relative;
+  left: 38rem;
+}
+
+#product1 .pro {
+  width: 23%;
+  min-width: 250px;
+  padding: 10px 12px;
+  border: 1px solid hsl(214, 84%, 56%);
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+  margin: 15px 0;
+  transition: 0.2s ease;
+  position: relative;
+  left: 40px;
+}
+
+#product1 .pro:hover {
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+}
+
+#product1 .pro img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+#product1 .pro .des {
+  text-align: start;
+  padding: 10px 0;
+}
+
+#product1 .pro .des span {
+  color: #606063;
+  font-size: 12px;
+}
+
+#product1 .pro .des h5 {
+  padding-top: 7px;
+  color: #1a1a1a;
+  font-size: 14px;
+}
+
+.star {
+  font-size: 12px;
+  color: rgb(243, 181, 25);
+}
+
+#product1 .pro .halal-logo {
+  width: 48px;
+  position: absolute;
+  left: 18rem;
+  bottom: 20px;
+}
+
+#product1 .pro .des h4 {
+  padding-top: 7px;
+  font-size: 15px;
+  font-weight: 700;
+  color:  hsl(214, 84%, 56%);
+}
+
+#product1 .pro .cart {
+  width: 25px;
+  height: 40px;
+  font-weight: 500;
+  color:  hsl(214, 84%, 56%);
+  position: absolute;
+  bottom: 14px;
+  right: 10px;
+}
+
+#banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: hsl(214, 100%, 78%);
+  width: 100%;
+  height: 40vh;
+  background-size: cover;
+  background-position: center;
+}
+
+#banner h4 {
+  color: #fff;
+  font-size: 16px;
+}
+
+#banner h2 {
+  color: #fff;
+  font-size: 30px;
+  padding: 10px 0;
+}
+
+#banner button:hover {
+  background:  hsl(214, 84%, 56%);
+  color: #fff;
+}
+
+footer {
+  margin-top: 80px;
+  border-top: 1px solid #cecece;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+footer .col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 1px;
+}
+
+footer .col img {
+  position: relative;
+  bottom: 50px;
+}
+
+footer h4 {
+  font-size: 14;
+  padding-bottom: 20px;
+}
+
+footer p {
+  font-size: 13px;
+  margin: 0 0 8px 0;
+}
+
+footer a {
+  font-size: 13px;
+  text-decoration: none;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+footer .lp {
+  position: relative;
+  bottom: 40px;
+}
+
+footer .follow {
+  position: relative;
+  top: 5px;
+}
+
+.icon{
+  font-size: 25px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+footer .install .row img {
+  padding: 8px;
+  border: 1px solid  hsl(214, 84%, 56%);
+  width: 40%;
+  border-radius: 6px;
+}
+
+footer .install img {
+  margin: 10px 0 15px 0;
+}
+
+.play {
+  position: relative;
+  left: 10px;
+}
+
+.row {
+  position: relative;
+  top: 50px;
+  cursor: pointer;
+}
+
+.favorit {
+  position: relative;
+  left: 22%;
+  bottom: 38px;
+  cursor: pointer;
+}
+
+.hati.red-heart {
+  color: red;
+}
+
+.favorit .hati:hover {
+  color: red;
+}
+
+.follow .icon{
+  margin-block-end: 20px;
+}
+
+.bayar {
+  position: relative;
+  top: 2px;
+}
+
+#prodetails {
+  display: flex;
+  margin-top: 20px;
+  position: relative;
+  top: 100px;
+}
+
+#prodetails .single-pro-image {
+  width: 40%;
+  margin-right: 50px;
+}
+
+.small-img-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.small-img-col {
+  flex-basis: 24%;
+  cursor: pointer;
+}
+
+#prodetails .single-pro-details {
+  width: 50%;
+  padding-top: 30px;
+}
+
+#prodetails .single-pro-details h4 {
+  padding: 40px 0 20px 0;
+}
+
+#prodetails .single-pro-details h2 {
+  font-size: 26px;
+}
+
+#prodetails .single-pro-details select {
+  display: block;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+
+#prodetails .single-pro-details input {
+  width: 50px;
+  height: 47px;
+  padding-left: 10px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+#prodetails .single-pro-details input:focus {
+  outline: none;
+}
+
+#prodetails .single-pro-details .normal {
+  background: hsl(214, 84%, 56%);
+  color: #FFF;
+}
+
+#header .normall {
+  background: hsl(214, 84%, 56%);
+  color: #FFF;
+  position: relative;
+  right: 19rem;
+
+}
+
+#prodetails .single-pro-details span {
+  line-height: 25px;
+}
+
+.comment-section {
+    position: relative;
+    top: 100px;
+    left: 80px;
+    width: 88%;
+    padding-bottom: 125px;
+}
+
+.comment-box,
+.post-comment .list {
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 2px #0002;
+}
+
+.comment-session {
+    width: 650px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.post-comment .list {
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.post-comment {
+    position: relative;
+    top: 35px;
+}
+
+.dropdown {
+  text-decoration: none;
+  border: transparent;
+  background-color: transparent;
+  position: fixed;
+  left: 43.5rem;
+  bottom: 36px;
+}
+
+.post-comment .list .user {
+    display: flex;
+    padding: 8px;
+    position: relative;
+    left: 10px;
+    overflow: hidden;
+}
+
+.post-comment .list .user img {
+    height: 38px;
+    width: 38px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.comment-session .name {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.post-comment .list .day {
+    font-size: 12px;
+}
+
+.post-comment .comment-post {
+    padding: 0 0 15px 58px;
+}
+
+.comment-box {
+    padding: 10px;
+    overflow: hidden;
+    position: relative;
+    top: 30px;
+}
+
+.comment-box .user {
+    display: flex;
+    position: relative;
+    left: 10px;
+    width: min-content;
+}
+
+.comment-box .image img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.comment-box textarea {
+    background: #eee;
+    width: -webkit-fill-available;
+    height: 152px;
+    margin: 10px 0;
+    padding: 10px;
+    resize: inherit;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 0 1px #0003;
+}
+
+.comment-box textarea:focus-visible {
+    box-shadow: 0 0 0 1px hsl(214, 84%, 56%);
+    outline: none;
+}
+
+.comment-box .comment-submit {
+    float: right;
+    padding: 6px 10px;
+    border: none;
+    background: hsl(214, 84%, 56%);
+    color: #eee;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.comment-box .comment-submit:hover {
+    background: hsl(214, 84%, 56%);
+}
+
+.select {
+  position: relative;
+  top: 10px;
+}
+
+.text-links {
+  cursor: pointer;
+}
+
+.links-login {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #006786e0;
+  padding: 10px;
+  width: 200px;
+  z-index: 9999;
+  border-radius: 10px;
+  visibility: hidden;
+}
+
+.activeLogin {
+  visibility: visible;
+  opacity: 1;
+}
+
+.category-info {
+  position: relative;
+  bottom: 40px;
+  left: 30rem;
+}
+
+.links-login > a:hover {
+  color: #fa9191;
+}
+
+.links-login > a {
+  color: #fff;
+}
+
+.social-link {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  border-radius: 50%;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+}
+
+.social-link:hover,
+.social-link:focus {
+  background: #ddd;
+  text-decoration: none;
+  color: #555;
+}
+
+/* Media query untuk layar dengan lebar maksimum 1024px */
+@media screen and (max-width: 1024px) {
+  .navbar-form {
+    right: 19rem;
+    top: 35px;
+    width: 10%;
+    border: none;
+  }
+  
+  .navbar-form-search {
+    width: 40rem;
+    right: 16rem;
+  }
+
+  .navbar-form-search-guest {
+    width: 40rem;
+    right: 16rem;
+  }
+
+  .kaca {
+    right: 14.5rem;
+  }
+
+  .kaca-guest {
+    right: 14.5rem;
+  }
+
+  .eli {
+    left: 31.5rem;
+  }
+
+  .eli-guest {
+    left: 31.5rem;
+  }
+
+  #hero {
+    height: 100vh;
+    width: 99%;
+    background-position: top 1rem left 1rem;
+    background-repeat: no-repeat;
+  }
+
+  #hero .teks {
+    position: relative;
+    right: 30px;
+    top: 60px;
+  }
+
+  .kategori {
+    text-align: center;
+    border: 1px solid hsl(214, 84%, 56%);
+    border-radius: 6px;
+    margin: 65px;
+  }
+
+  #product1 .pro .halal-logo {
+    left: 12rem;
+    bottom: 1rem;
+  }
+
+  .favorit {
+    left: 40%;
+    bottom: 40px;
+  }
+
+  .dropdown {
+    left: 24.5rem;
+  }
+
+  .category-info {
+    left: 10rem;
+  }
+
+  #product1 .pro-container {
+    margin: 25px;
+    padding-bottom: 2px;
+  }
+
+  button.normall {
+    left: 40px;
+  }
+
+  .normal1 {
+    left: 50px;
+  }
+
+  .kosong {
+    text-align: center;
+    position: relative;
+    left: 15.5rem;
+  }
+}
+
+/* Media query untuk layar dengan lebar maksimum 1336px */
+@media screen and (min-width: 1025px) and (max-width: 1336px) and (max-height: 768px) {
+  .ac-name {
+    position: relative;
+    left: -5.5rem;
+    bottom: 38px;
+    /* right: 20%; */
+  }
+
+  .action .menu {
+    position: absolute;
+    top: 120px;
+    right: 70px;
+  }
+
+  .profile {
+    right: 10rem;
+  }
+
+  .logo-atas {
+    right: 130px;
+    top: 10px;
+  }
+
+  .navbar-form-search {
+    width: 59rem;
+    right: 18rem;
+  }
+
+  .navbar-form-search-guest {
+    width: 59rem;
+    right: 18rem;
+  }
+
+  .kaca {
+    right: 16.5rem;
+  }
+
+  .kaca-guest {
+    right: 16.5rem;
+  }
+
+  .eli {
+    left: 47.5rem;
+  }
+
+  .eli-guest {
+    left: 48.5rem;
+  }
+
+  #hero {
+    height: 100vh;
+    width: 68%;
+    position: relative;
+    left: 25rem;
+    background-position: top 2.5rem left 0;
+  }
+
+  #hero .teks {
+    position: relative;
+    right: 28.5rem;
+    top: 60px;
+  }
+
+  .kategori {
+    position: relative;
+    top: 30px;
+    left: 25px;
+    margin: 5px;
+    display: inline-block;
+    box-sizing: border-box;
+  }
+
+  #feature .fe-box {
+    width: 173px;
+  }
+
+  .text-containerr {
+    text-align: center; 
+    margin-bottom: 110px;
+    position: relative;
+    left: 27px;
+    top: 5rem;
+  }
+
+  #product1 {
+    position: relative;
+    top: 50px;
+  }
+
+  #product1 .pro-container {
+    margin: 45px;
+    padding-bottom: 2px;
+  }
+
+  #product1 .pro {
+    width: 30%;
+    margin: 5px 10px;
+    gap: 200px;
+  }
+
+  .recomen {
+    top: 10px;
+  }
+
+  #product1 .pro .halal-logo {
+    width: 14%;
+    left: 15.5rem;
+    bottom: 1rem;
+  }
+
+  .favorit {
+    left: 30%;
+    bottom: 38px;
+  }
+
+  .dropdown {
+    left: 33.5rem;
+  }
+
+  button.normall {
+    left: -7rem;
+  }
+
+  .normal1 {
+    left: -6rem;
+  }
+
+  .lp h4 {
+    position: relative;
+    top: 15px;
+  }
+
+  .kosong {
+    text-align: center;
+    position: relative;
+    top: 30px;
+    left: 21.5rem;
+  }
+}
+
+@media screen and (min-width: 1337px) and (max-width: 1400px) and (max-height: 768px) {
+
+  .ac-name {
+    bottom: 38px;
+    right: 0;
+    left: 3.3rem;
+  }
+
+  .action .menu {
+    position: absolute;
+    top: 120px;
+    right: -3rem;
+  }
+
+  .profile {
+    position: relative;
+    right: 16rem;
+    left: -15px;
+  }
+
+  .logo-atas {
+    right: 130px;
+    top: 10px;
+  }
+
+  .navbar-form {
+    width: 20px;
+  }
+
+  .navbar-form-search {
+    width: 65rem;
+    right: 36.5rem;
+  }
+
+  .navbar-form-search-guest {
+    width: 63rem;
+    right: 29rem;
+  }
+
+  .kaca {
+    left: -35.5rem;
+    top: -2.7rem;
+  }
+
+  .kaca-guest {
+    left: -28rem;
+    top: -2.7rem;
+  }
+
+  .eli {
+    left: 47rem;
+  }
+
+  .eli-guest {
+    position: relative;
+    right: 0;
+    left: 47rem;
+  }
+
+  #hero {
+    height: 100vh;
+    width: 93%;
+    position: relative;
+    left: 8rem;
+    background-position: top 2%  left 0;
+  }
+
+  #hero .teks {
+    position: relative;
+    right: 150px;
+    top: 60px;
+  }
+
+  .kategori {
+    position: relative;
+    left: 25px;
+    top: 30px;
+    box-sizing: border-box;
+  }
+
+  .text-containerr {
+    text-align: center; 
+    margin-bottom: 110px;
+    position: relative;
+    top: 5rem;
+  }
+
+  #product1 {
+    position: relative;
+    top: 50px;
+  }
+
+  #product1 .pro-container {
+    margin: 45px;
+    position: relative;
+    padding-bottom: 2px;
+  }
+
+  #product1 .pro {
+    left: 20px;
+  }
+
+  .recomen {
+    left: 35px;
+  }
+
+  #product1 .pro .halal-logo {
+    left: 12.5rem;
+    bottom: 1rem;
+  }
+
+  .favorit {
+    left: 28%;
+    bottom: 38px;
+  }
+
+  .dropdown {
+    left: 36rem;
+  }
+
+  button.normall {
+    left: 11rem;
+  }
+
+  .normal1 {
+    right: -6rem;
+  }
+
+  .lp h4 {
+    position: relative;
+    top: 15px;
+  }
+
+  .kosong {
+    position: relative;
+    left: 25rem;
+  }
+}
+
+@media screen and (min-width: 1337px) and (max-width: 1440px) and (max-height: 1080px) {
+
+  .ac-name {
+    bottom: 38px;
+    right: 0;
+    left: 3.3rem;
+  }
+
+  .action .menu {
+    position: absolute;
+    top: 120px;
+    right: -3rem;
+  }
+
+  .profile {
+    position: relative;
+    right: 16rem;
+    left: -15px;
+  }
+
+  .logo-atas {
+    right: 130px;
+    top: 10px;
+  }
+
+  .navbar-form {
+    width: 20px;
+  }
+
+  .navbar-form-search {
+    width: 62rem;
+    right: 34rem;
+  }
+
+  .navbar-form-search-guest {
+    width: 62rem;
+    right: 27.5rem;
+  }
+
+  .kaca {
+    left: -32.5rem;
+    top: -2.7rem;
+  }
+
+  .kaca-guest {
+    left: -26.5rem;
+    top: -2.7rem;
+  }
+
+  .eli {
+    right: 0;
+    left: 44rem;
+  }
+
+  .eli-guest {
+    position: relative;
+    right: 0;
+    left: 48.5rem;
+  }
+
+  #hero {
+    height: 100vh;
+    width: 78%;
+    position: relative;
+    left: 18.5rem;
+    background-position: top -3%  left 0;
+  }
+
+  #hero .teks {
+    position: relative;
+    right: 22rem;
+    top: 60px;
+  }
+
+  .kategori {
+    position: relative;
+    left: -5px;
+    top: 30px;
+    box-sizing: border-box;
+  }
+
+  .text-containerr {
+    text-align: center; 
+    margin-bottom: 110px;
+    position: relative;
+    left: 20px;
+    top: 5rem;
+  }
+
+  #product1 {
+    position: relative;
+    top: 50px;
+  }
+
+  #product1 .pro-container {
+    margin: 45px;
+    position: relative;
+    padding-bottom: 2px;
+  }
+
+  #product1 .pro {
+    left: 20px;
+  }
+
+  .recomen {
+    left: 35px;
+  }
+
+  #product1 .pro .halal-logo {
+    left: 12rem;
+    bottom: 1rem;
+  }
+
+  .favorit {
+    left: 28%;
+    bottom: 38px;
+  }
+
+  .dropdown {
+    left: 36rem;
+  }
+
+  button.normall {
+    left: 12rem;
+  }
+
+  .normal1 {
+    left: 8.5rem;
+  }
+
+  .lp h4 {
+    position: relative;
+    top: 15px;
+  }
+
+  .kosong {
+    position: relative;
+    left: 25rem;
+  }
+}
+
+@media screen and (min-width: 1441px) and (max-width: 1920px) and (max-height: 1080px) {
+  .ac-name {
+    bottom: 38px;
+    right: 0;
+    left: 3.3rem;
+  }
+
+  .action .menu {
+    position: absolute;
+    top: 120px;
+    right: -3rem;
+  }
+
+  .profile {
+    position: relative;
+    right: 16rem;
+    left: -15px;
+  }
+
+  .logo-atas {
+    right: 130px;
+    top: 10px;
+  }
+
+  .navbar-form-search {
+    width: 95rem;
+    right: 24rem;
+  }
+
+  .kaca {
+    right: 22.5rem;
+  }
+
+  .kaca-guest {
+  position: relative;
+  text-decoration: none;
+  bottom: 45px;
+  right: 18rem;
+  }
+
+  .eli {
+    left: 83rem;
+  }
+
+  .eli-guest {
+    position: relative;
+    left: 85.5rem;
+  }
+
+  #hero {
+    height: 100vh;
+    width: 93%;
+    position: relative;
+    left: 8rem;
+    object-fit: cover;
+    background-position: top 8%  left 0;
+  }
+
+  #hero .teks {
+    position: relative;
+    right: 150px;
+    top: 60px;
+  }
+
+  .kategori {
+    position: relative;
+    top: 30px;
+    box-sizing: border-box;
+  }
+
+  .text-containerr {
+    text-align: center; 
+    margin-bottom: 110px;
+    position: relative;
+    /* bottom: 5rem; */
+    top: 5rem;
+  }
+
+  #product1 {
+    position: relative;
+    top: 50px;
+  }
+
+  #product1 .pro-container {
+    margin: 45px;
+    position: relative;
+    padding-bottom: 2px;
+  }
+
+  #product1 .pro {
+    width: 24%;
+    margin: 5px 0px;
+    gap: 200px;
+  }
+
+  .recomen {
+    right: 20px;
+  }
+
+  #product1 .pro .halal-logo {
+    left: 19.5rem;
+    bottom: 1rem;
+  }
+
+  .favorit {
+    left: 21%;
+    bottom: 38px;
+  }
+
+  .dropdown {
+    left: 49rem;
+  }
+
+  button.normall {
+    left: 6.8rem;
+  }
+
+  .normal1 {
+    left: 7rem;
+  }
+
+  .lp h4 {
+    position: relative;
+    top: 15px;
+  }
+
+  .kosong {
+    position: relative;
+    left: 38rem;
+  }
+}

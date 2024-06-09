@@ -1,0 +1,231 @@
+:root{
+    --dark1: #0000004d;
+    --dark2: #181c20;
+    --dark3: #212529;
+    --dark4: #2d3135;
+    --dark5: #424549;
+    --dark6: #404346;
+    --dark7: #9c9c9c;
+    --dark8: #dae0e7;
+    --dark9: #262a2e;
+    --red1: #902e31;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins',sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: red;
+}
+
+.container {
+    max-width: 700px;
+    width: 100%;
+    border: 1px solid hsl(214, 84%, 56%);
+    background: var(--dark7);
+    padding: 25px 30px;
+    border-radius: 5px;
+}
+
+.container .title {
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+
+.container .title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background: hsl(214, 84%, 56%);
+}
+
+.container form .user-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+.title {
+    color: #ccc;
+}
+
+form .user-details .input-box {
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
+
+.user-details .input-box .details{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #ddd;
+}
+
+.user-details .input-box input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3 ease;
+}
+
+.user-details .input-box textarea{
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    padding-top: 10px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3 ease;
+}
+
+.jk {
+    color: #ccc;
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
+    border-color: hsl(214, 84%, 56%);
+}
+
+.user-details .input-box textarea:focus,
+.user-details .input-box textarea:valid {
+    border-color: hsl(214, 84%, 56%);
+}
+
+.user-details .input-box select:focus,
+.user-details .input-box select:valid {
+    border-color: hsl(214, 84%, 56%);
+}
+
+.user-details .input-box section:focus,
+.user-details .input-box section:valid {
+    border-color: hsl(214, 84%, 56%);
+}
+
+.inputt{
+    background-color:  hsl(214, 33%, 21%);
+    color: #ccc;
+    border-radius: 5px;
+}
+
+.inputt::placeholder{
+    color: #ccc;
+}
+
+form .gender-details .gender-title{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+form .gender-details .category{
+    display: flex;
+    width: 80%;
+    margin: 14px 0;
+    justify-content: space-between;
+}
+
+form .gender-details .category label{
+    display: flex;
+    align-items: center;
+}
+
+.gender-details .category .dot{
+    height: 18px;
+    width: 18px;
+    background: #d9d9d9;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 5px solid transparent;
+}
+
+#dot-1:checked ~ .category label .one,
+#dot-2:checked ~ .category label .two,
+#dot-3:checked ~ .category label .three{
+    background-color: #d9d9d9;
+    background: hsl(214, 84%, 56%);
+}
+
+form input[type="radio"]{
+    display: none;
+}
+
+form .button {
+    height: 45px;
+    margin: 45px 0;
+}
+
+form .button input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: hsl(219, 59%, 16%);
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    background: hsl(214, 84%, 56%);
+}
+
+.kembali {
+    height: 400%;
+    width: 100%;
+    outline: none;
+    color: hsl(219, 59%, 16%);
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    background: hsl(214, 84%, 56%);
+}
+
+.back {
+    position: relative;
+    left: 5px;
+}
+
+.modall {
+    position: relative;
+    left: 10px;
+}
+
+.modal-header {
+    border-bottom: 1px solid hsl(214, 84%, 56%);
+}
+
+.modal-footer {
+    border-top: 1px solid hsl(214, 84%, 56%);
+    color: hsl(214, 84%, 56%);
+
+}
+
+.modal-content {
+    background: hsl(221, 26%, 14%);
+    color: #ddd;
+    border-radius: hsl(214, 84%, 56%);
+}
+
+.close {
+    display: none;
+}
