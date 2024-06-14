@@ -53,7 +53,6 @@ class PelangganController extends Controller
         ]);
     }
 
-
     public function middle()
     {
         $data = Product::where('category', 'middle')->get();

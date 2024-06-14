@@ -92,7 +92,6 @@ class UserController extends Controller
     public function show($id)
     {
         $data = User::findOrFail($id);
-        // $hasValue = Hash::make($data->password);
         return view(
             'admin.modal.editUser',
             [
@@ -112,7 +111,7 @@ class UserController extends Controller
         'tlp' => 'required',
         'role' => 'required',
         'jenis_kelamin' => 'required',
-        'foto' => 'nullable|', // Ubah validasi untuk foto
+        'foto' => 'nullable|',
     ], [
         'nama.required' => 'Silahkan isi nama user.',
         'email.required' => 'Silahkan isi alamat email.',
@@ -125,14 +124,12 @@ class UserController extends Controller
         'foto.max' => 'Ukuran foto tidak boleh lebih dari 2MB.',
     ]);
 
-    // Memperbarui data pengguna tanpa password jika tidak ada perubahan pada password
     if (!$request->filled('password')) {
         $data->fill($request->except('password'));
     } else {
         $data->fill($request->all());
     }
-    
-    // Memeriksa apakah pengguna mengunggah foto baru
+
     if ($request->hasFile('foto')) {
         $photo = $request->file('foto');
         $filename = date('Ymd') . '_' . $photo->getClientOriginalName();
@@ -219,7 +216,7 @@ class UserController extends Controller
             'tlp' => 'required',
             'role' => 'required',
             'jenis_kelamin' => 'required',
-            'foto' => 'nullable|', // Ubah validasi untuk foto
+            'foto' => 'nullable|',
         ], [
             'nama.required' => 'Silahkan isi nama user.',
             'email.required' => 'Silahkan isi alamat email.',
@@ -232,14 +229,12 @@ class UserController extends Controller
             'foto.max' => 'Ukuran foto tidak boleh lebih dari 2MB.',
         ]);
 
-        // Memperbarui data pengguna tanpa password jika tidak ada perubahan pada password
         if (!$request->filled('password')) {
             $data->fill($request->except('password'));
         } else {
             $data->fill($request->all());
         }
-        
-        // Memeriksa apakah pengguna mengunggah foto baru
+
         if ($request->hasFile('foto')) {
             $photo = $request->file('foto');
             $filename = date('Ymd') . '_' . $photo->getClientOriginalName();

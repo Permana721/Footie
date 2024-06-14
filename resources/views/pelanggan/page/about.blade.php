@@ -8,8 +8,6 @@
             <div class="col-lg-6">
               <h1 class="display-4">Tentang Footie</h1>
               <p class="lead text-muted mb-0">Kami adalah penyedia solusi kreatif dan inovatif dalam pembuatan website e-commerce yang menghubungkan Anda dengan pelanggan dalam industri makanan dan minuman.</p>
-              {{-- <p class="lead text-muted">Snippet by <a href="https://bootstrapious.com/snippets" class="text-muted"> 
-                          <u>Bootstrapious</u></a> --}}
               </p>
             </div>
             <div class="col-lg-6 d-none d-lg-block"><img src="https://bootstrapious.com/i/snippets/sn-about/illus.png" alt="" class="img-fluid"></div>
@@ -45,7 +43,6 @@
           </div>
       
           <div class="row text-center">
-            <!-- Team item-->
             <div class="col-xl-3 col-sm-6 mb-5">
               <div class="bg-white rounded shadow-sm py-5 px-4"><img src="{{ asset('assets/img/profil/1.png') }}" alt="" width="99" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm circle-image">
                 <h5 class="mb-0">A Azka</h5><span class="small text-uppercase text-muted">Ketua - CEO</span>
@@ -57,9 +54,7 @@
                 </ul>
               </div>
             </div>
-            <!-- End-->
       
-            <!-- Team item-->
             <div class="col-xl-3 col-sm-6 mb-5">
               <div class="bg-white rounded shadow-sm py-5 px-8"><img src="{{ asset('assets/img/profil/2.png') }}" alt="" width="119" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
                 <h5 class="mb-0">Ihsan</h5><span class="small text-uppercase text-muted">Anggota - Front End</span>
@@ -73,9 +68,7 @@
                 </ul>
               </div>
             </div>
-            <!-- End-->
       
-            <!-- Team item-->
             <div class="col-xl-3 col-sm-6 mb-5">
               <div class="bg-white rounded shadow-sm py-5 px-4"><img src="{{ asset('assets/img/profil/3.png') }}" alt="" width="90" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
                 <h5 class="mb-0">Alvino</h5><span class="small text-uppercase text-muted">Anggota - Back End</span>
@@ -87,9 +80,7 @@
                 </ul>
               </div>
             </div>
-            <!-- End-->
       
-            <!-- Team item-->
             <div class="col-xl-3 col-sm-6 mb-5">
               <div class="bg-white rounded shadow-sm py-5 px-4"><img src="{{ asset('assets/img/profil/5.png') }}" alt="" width="85" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
                 <h5 class="mb-0">Permana</h5><span class="small text-uppercase text-muted">Anggota - Full Stack</span>
@@ -101,7 +92,6 @@
                 </ul>
               </div>
             </div>
-            <!-- End-->
       
           </div>
         </div>

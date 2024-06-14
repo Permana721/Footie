@@ -158,7 +158,7 @@
 <script>
     $(document).ready(function() {
         var successMessage = $('#swalContainer').data('message');
-        console.log(successMessage); // Mencetak pesan ke konsol untuk debugging
+        console.log(successMessage);
 
         if (successMessage) {
             Swal.fire('Berhasil!', successMessage, 'success');

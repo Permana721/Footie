@@ -36,17 +36,17 @@ class Controller extends BaseController
         ]);
     }
 
-public function admin()
-    {
-        $dataProduct = product::count();
-        $dataUser = User::count();
-        return view('admin.page.dashboard', [
-            'name'          => "Dashboard",
-            'title'         => 'Admin Dashboard',
-            'totalProduct'  => $dataProduct,
-            'totalUser'  => $dataUser,
-        ]);
-    }
+    public function admin()
+        {
+            $dataProduct = product::count();
+            $dataUser = User::count();
+            return view('admin.page.dashboard', [
+                'name'          => "Dashboard",
+                'title'         => 'Admin Dashboard',
+                'totalProduct'  => $dataProduct,
+                'totalUser'  => $dataUser,
+            ]);
+        }
 
 
     public function userManagement()
