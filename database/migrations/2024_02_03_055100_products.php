@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('sku');
             $table->string('nama_product');
             $table->string('link');
-            $table->string('deskripsi');
+            $table->string('deskripsi', 2550);
             $table->string('category');
             $table->string('tipe');
             $table->string('alamat_penjual');
