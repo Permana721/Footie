@@ -77,7 +77,7 @@ class PelangganController extends Controller
 
     public function japanese()
     {
-        $data = Product::where('category', 'japanese')->get();
+        $data = Product::where('category', 'japan')->get();
         return view('pelanggan.page.home', [
             'hideSections' => true,
             'data' => $data,
