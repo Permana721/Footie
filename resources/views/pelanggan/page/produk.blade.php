@@ -147,30 +147,31 @@
         }
 
         $(document).ready(function() {
-        $('.like-form').on('submit', function(e) {
-            e.preventDefault();
-            var form = $(this);
-            var button = form.find('.like-button');
-            var likeCount = form.find('.like-count');
-            
-            $.ajax({
-                type: 'POST',
-                url: form.attr('action'),
-                data: form.serialize(),
-                success: function(response) {
-                    likeCount.text(response.likes);
-                    if (response.liked) {
-                        button.span.i.find('.hati').addStyle('red-heart');
-                    } else {
-                        button.span.i.find('.hati').removeClass('red-heart');
+            $('.like-form').on('submit', function(e) {
+                e.preventDefault();
+                var form = $(this);
+                var button = form.find('.like-button');
+                var likeCount = form.find('.like-count');
+                var heartIcon = form.find('.hati');
+
+                $.ajax({
+                    type: 'POST',
+                    url: form.attr('action'),
+                    data: form.serialize(),
+                    success: function(response) {
+                        likeCount.text(response.likes);
+                        if (response.liked) {
+                            heartIcon.addClass('red-heart');
+                        } else {
+                            heartIcon.removeClass('red-heart');
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(xhr.responseText);
                     }
-                },
-                error: function(xhr, status, error) {
-                    console.error(xhr.responseText);
-                }
+                });
             });
         });
-    });
 
     document.addEventListener("DOMContentLoaded", function() {
             document.querySelectorAll('.edit-comment-btn').forEach(btn => {
