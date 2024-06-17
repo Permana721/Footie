@@ -127,14 +127,14 @@ button.lbh-banyak {
   transition: 0.2s;
 }
 
-.normal2 {
+.loadMore {
   position: relative;
-  font-size: 10px;
-  font-weight: 500;
-  padding: 9px 20px;
+  font-size: 13px;
+  font-weight: 100px;
+  padding: 15px 50px;
   border-radius: 4px;
   position: relative;
-  left: 100px;
+  text-align: center;
   top: 10px;
   cursor: pointer;
   border: none;
@@ -507,8 +507,8 @@ body {
 }
 
 .recomen {
-  position: relative;
-  bottom: 20px;
+    text-align: center;
+    margin: 0 0 50px;
 }
 
 #hero {
@@ -791,7 +791,7 @@ footer .install img {
 
 .favorit {
   position: relative;
-  left: 22%;
+  left: 23.5%;
   bottom: 38px;
   cursor: pointer;
 }
@@ -918,6 +918,7 @@ footer .install img {
   border: transparent;
   background-color: transparent;
   position: fixed;
+  text-align: left;
   left: 696px;
   bottom: 36px;
 }
@@ -1258,10 +1259,6 @@ footer .install img {
     gap: 200px;
   }
 
-  .recomen {
-    top: 10px;
-  }
-
   #product1 .pro .halal-logo {
     width: 14%;
     left: 15.5rem;
@@ -1541,10 +1538,6 @@ footer .install img {
     left: 20px;
   }
 
-  .recomen {
-    left: 35px;
-  }
-
   #product1 .pro .halal-logo {
     left: 12rem;
     bottom: 1rem;
@@ -1671,10 +1664,6 @@ footer .install img {
     width: 24%;
     margin: 5px 0px;
     gap: 200px;
-  }
-
-  .recomen {
-    right: 20px;
   }
 
   #product1 .pro .halal-logo {
