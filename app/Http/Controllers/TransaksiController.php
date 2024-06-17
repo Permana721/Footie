@@ -15,13 +15,14 @@ class TransaksiController extends Controller
 {
     public function index(Request $request)
     {
-        $data = product::all();
-    
+        $data = Product::inRandomOrder()->get();
+        
         return view('pelanggan.page.home', [
             'title' => 'Home',
             'data' => $data
         ]);
     }
+
 
     public function shop()
     {
