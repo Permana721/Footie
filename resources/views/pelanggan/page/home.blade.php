@@ -119,14 +119,14 @@
                 @endif
             </h2>
         @endif
-        <div class="pro-container">
+        <div class="pro-container" id="product-container">
             @if ($data->isEmpty())
                 <div class="kosong">
                     <h1>Belum ada produk</h1>
                 </div>
             @else
-                @foreach ($data as $p)
-                    <div class="pro" onclick="redirectToDetail('{{ Auth::check() }}', '{{ route('showDetail', encrypt($p->id) ) }}')">
+                @foreach ($data as $key => $p)
+                    <div class="pro {{ $key >= 8 ? 'd-none' : '' }}" onclick="redirectToDetail('{{ Auth::check() }}', '{{ route('showDetail', encrypt($p->id) ) }}')" data-id="{{ $p->id }}">
                         <img src="{{ asset('storage/product/' . $p->foto) }}" alt="">
                         <div class="des">
                             <span>{{ $p->alamat_penjual }}</span>
@@ -138,7 +138,9 @@
                 @endforeach
             @endif
         </div>
-        {{-- <button class="normal2" id="loadMore">Lihat Lebih Banyak</button> --}}
+        @if ($data->count() > 8)
+            <button class="loadMore" id="loadMore" data-offset="12"><strong>Muat Lebih Banyak</strong></button>
+        @endif
     </section>
 
     @unless(Request::has('search') || isset($hideSections))
@@ -153,9 +155,41 @@
         @endif
     @endunless
 
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const loadMoreButton = document.getElementById('loadMore');
+
+        if (loadMoreButton) {
+            loadMoreButton.addEventListener('click', function() {
+                const offset = parseInt(loadMoreButton.getAttribute('data-offset'), 10);
+                const products = document.querySelectorAll('.pro.d-none');
+                let count = 0;
+
+                for (let i = 0; i < products.length; i++) {
+                    if (count >= 8) break;
+                    products[i].classList.remove('d-none');
+                    count++;
+                }
+
+                loadMoreButton.setAttribute('data-offset', offset + count);
+
+                if (offset + count >= {{ $data->count() }}) {
+                    loadMoreButton.style.display = 'none';
+                }
+            });
+        }
+    });
+
+    function redirectToDetail(isAuthenticated, url) {
+        if (isAuthenticated) {
+            window.location.href = url;
+        } else {
+            alert('You need to login first.');
+        }
+    }
+
     $(document).ready(function() {
         var successMessage = $('#swalContainer').data('message');
         console.log(successMessage);
@@ -166,16 +200,16 @@
     });
 
     function redirectToDetail(isLoggedIn, route) {
-    if (isLoggedIn) {
-        window.location.href = route;
-    } else {
-        Swal.fire({
-            title: 'Perhatian!',
-            text: 'Harap login untuk mengakses fitur',
-            icon: 'warning',
-        });
+        if (isLoggedIn) {
+            window.location.href = route;
+        } else {
+            Swal.fire({
+                title: 'Perhatian!',
+                text: 'Harap login untuk mengakses fitur',
+                icon: 'warning',
+            });
+        }
     }
-}
 
     $.ajaxSetup({
         headers: {
