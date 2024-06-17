@@ -46,61 +46,64 @@
         <div class="comment-section">
             <h5>Komentar (<?php echo e($p->comments->count()); ?>)</h5>
             <span><?php echo e($p->nama_product); ?></span>
-            <?php $__currentLoopData = $p->comments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $comment): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <div class="post-comment">
-                    <div class="list">
-                        <div class="user">
-                            <div class="user-image"><img src="<?php echo e(asset('storage/user/' . $comment->user_foto)); ?>" alt="image"></div>
-                            <div class="user-meta">
-                                <div class="name"><?php echo e($comment->user_name); ?></div>
-                                <div class="day"><?php echo e(\Carbon\Carbon::parse($comment->created_at)->locale('id')->diffForHumans()); ?></div>
+            <div id="comments-container">
+                <?php $__currentLoopData = $p->comments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $comment): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <div class="post-comment" id="post-comment-<?php echo e($comment->id); ?>">
+                        <div class="list">
+                            <div class="user">
+                                <div class="user-image"><img src="<?php echo e(asset('storage/user/' . $comment->user_foto)); ?>" alt="image"></div>
+                                <div class="user-meta">
+                                    <div class="name"><?php echo e($comment->user_name); ?> <?php echo $comment->updated_at > $comment->created_at ? '<span class="edited">(edited)</span>' : ''; ?></div>
+                                    <div class="day"><?php echo e(\Carbon\Carbon::parse($comment->created_at)->locale('id')->diffForHumans()); ?></div>
+                                </div>
+                            </div>
+        
+                            <div class="comment-post">
+                                <span id="comment-text-<?php echo e($comment->id); ?>"><?php echo e($comment->komentar); ?></span>
+                                <?php if($comment->user_id === auth()->id()): ?>
+                                    <div class="dropdown">
+                                        <button class="dropdown" type="button" id="dropdownMenuButton-<?php echo e($comment->id); ?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton-<?php echo e($comment->id); ?>">
+                                            <a class="dropdown-item edit-comment-btn" href="#" data-comment-id="<?php echo e($comment->id); ?>" data-comment-text="<?php echo e($comment->komentar); ?>">Edit</a>
+                                            <form action="<?php echo e(route('comments.destroy', $comment->id)); ?>" method="post">
+                                                <?php echo csrf_field(); ?>
+                                                <?php echo method_field('DELETE'); ?>
+                                                <button type="submit" class="dropdown-item">Hapus</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <form id="edit-comment-form-<?php echo e($comment->id); ?>" class="edit-comment-form d-none" action="<?php echo e(route('comments.update', $comment->id)); ?>" method="post">
+                                        <?php echo csrf_field(); ?>
+                                        <?php echo method_field('PUT'); ?>
+                                        <textarea name="comment" class="edit-comment-textarea"><?php echo e($comment->komentar); ?></textarea>
+                                        <button type="submit">Simpan</button>
+                                        <button type="button" class="btn-cancel">Batal</button>
+                                    </form>
+                                <?php endif; ?>
                             </div>
                         </div>
-                    
-                        <div class="comment-post">
-                            <span id="comment-text-<?php echo e($comment->id); ?>"><?php echo e($comment->komentar); ?></span>
-                            <?php if($comment->user_id === auth()->id()): ?>
-                                <div class="dropdown">
-                                    <button class="dropdown" type="button" id="dropdownMenuButton-<?php echo e($comment->id); ?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="fas fa-ellipsis-v"></i>
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton-<?php echo e($comment->id); ?>">
-                                        <a class="dropdown-item edit-comment-btn" href="#" data-comment-id="<?php echo e($comment->id); ?>">Edit</a>
-                                        <form action="<?php echo e(route('comments.destroy', $comment->id)); ?>" method="post">
-                                            <?php echo csrf_field(); ?>
-                                            <?php echo method_field('DELETE'); ?>
-                                            <button type="submit" class="dropdown-item">Hapus</button>
-                                        </form>
-                                    </div>
-                                </div>
-                                <form id="edit-comment-form-<?php echo e($comment->id); ?>" class="edit-comment-form" action="<?php echo e(route('comments.update', $comment->id)); ?>" method="post" style="display: none;">
-                                    <?php echo csrf_field(); ?>
-                                    <?php echo method_field('PUT'); ?>
-                                    <textarea name="comment" class="edit-comment-textarea"><?php echo e($comment->komentar); ?></textarea>
-                                    <button type="submit">Simpan</button>
-                                    <button type="button" class="btn-cancel">Batal</button>
-                                </form>
-                            <?php endif; ?>
-                        </div>
                     </div>
-                </div>
-            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            </div>
+        
             <div class="comment-box">
-                <div class="user">
+                <div class="user" >
                     <div class="image"><img src="<?php echo e(asset('storage/user/' . Auth::user()->foto)); ?>" alt="image"></div>
                     <div class="name"><?php echo e(Auth::user()->name); ?></div>
                 </div>
                 <form id="new-comment-form" action="<?php echo e(route('comments.store')); ?>" method="post">
                     <?php echo csrf_field(); ?>
                     <input type="hidden" name="product_id" value="<?php echo e($p->id); ?>">
+                    <input type="hidden" id="edit-comment-id" name="comment_id" value="">
                     <textarea name="comment" id="new-comment" placeholder="Tulis pesan anda"></textarea>
                     <button type="submit" class="comment-submit">Kirim</button>
+                    <button type="button" id="cancel-edit" class="batal" style="display: none;">Batal</button>
                 </form>
             </div>
         </div>
         
-
     <section id="product1" class="section-p1">
         <?php if(Auth::check()): ?>
             <h2>Pilihan Lainnya Untuk <?php echo e(Auth::user()->name); ?></h2>
@@ -129,23 +132,106 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/min/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/locale/id.min.js"></script>
+
 
     <script>
-        var MainImg = document.getElementById("MainImg");
-        var smallimg = document.getElementsByClassName("small-img");
+         $(document).ready(function() {
+        moment.locale('id');  // Set locale to Indonesian
 
-        smallimg[0].onclick = function(){
-            MainImg.src = smallimg[0].src;
-        }
-        smallimg[1].onclick = function(){
-            MainImg.src = smallimg[1].src;
-        }
-        smallimg[2].onclick = function(){
-            MainImg.src = smallimg[2].src;
-        }
-        smallimg[3].onclick = function(){
-            MainImg.src = smallimg[3].src;
-        }
+        // Handle form submission for new comments and edits
+        $('#new-comment-form').on('submit', function(e) {
+            e.preventDefault();
+
+            let commentId = $('#edit-comment-id').val();
+            let url = commentId ? `/comments/${commentId}` : $(this).attr('action');
+            let method = commentId ? 'PUT' : 'POST';
+
+            $.ajax({
+                type: method,
+                url: url,
+                data: $(this).serialize(),
+                success: function(response) {
+                    let comment = response.comment;
+                    let createdAt = moment(comment.created_at).fromNow();
+                    let edited = response.edited;
+
+                    let newCommentHtml = `
+                        <div class="post-comment" id="post-comment-${comment.id}">
+                            <div class="list">
+                                <div class="user">
+                                    <div class="user-image"><img src="/storage/user/${comment.user_foto}" alt="image"></div>
+                                    <div class="user-meta">
+                                        <div class="name">${comment.user_name} ${edited ? '<span class="edited">(edited)</span>' : ''}</div>
+                                        <div class="day">${createdAt}</div>
+                                    </div>
+                                </div>
+                            
+                                <div class="comment-post">
+                                    <span id="comment-text-${comment.id}">${comment.komentar}</span>
+                                    ${comment.user_id === <?php echo e(auth()->id()); ?> ? `
+                                    <div class="dropdown">
+                                        <button class="dropdown" type="button" id="dropdownMenuButton-${comment.id}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton-${comment.id}">
+                                            <a class="dropdown-item edit-comment-btn" href="#" data-comment-id="${comment.id}" data-comment-text="${comment.komentar}">Edit</a>
+                                            <form action="/comments/${comment.id}" method="post">
+                                                <?php echo csrf_field(); ?>
+                                                <?php echo method_field('DELETE'); ?>
+                                                <button type="submit" class="dropdown-item">Hapus</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    ` : ''}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+
+                    if (commentId) {
+                        $(`#post-comment-${comment.id}`).replaceWith(newCommentHtml);
+                    } else {
+                        $('#comments-container').append(newCommentHtml);
+                    }
+
+                    $('#new-comment-form')[0].reset();
+                    $('#edit-comment-id').val('');
+                    $('#cancel-edit').hide();
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+        });
+
+        // Handle edit button click
+        $(document).on('click', '.edit-comment-btn', function(e) {
+            e.preventDefault();
+
+            let commentId = $(this).data('comment-id');
+            let commentText = $(this).data('comment-text');
+
+            // Hide all edit forms
+            $('.edit-comment-form').hide();
+
+            // Show current edit form
+            $(`#edit-comment-form-${commentId}`).show();
+
+            $('#new-comment').val(commentText);
+            $('#edit-comment-id').val(commentId);
+            $('#cancel-edit').show();
+        });
+
+        // Handle cancel edit button click
+        $('#cancel-edit').on('click', function() {
+            $('.edit-comment-form').hide();
+            $('#new-comment-form')[0].reset();
+            $('#edit-comment-id').val('');
+            $(this).hide();
+        });
+    });
 
         $(document).ready(function() {
             $('.like-form').on('submit', function(e) {
@@ -174,7 +260,7 @@
             });
         });
 
-    document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function() {
             document.querySelectorAll('.edit-comment-btn').forEach(btn => {
                 btn.addEventListener('click', function() {
                     const commentId = this.getAttribute('data-comment-id');
@@ -185,20 +271,19 @@
         });
 
         document.querySelectorAll('.btn-cancel').forEach(btn => {
-        btn.addEventListener('click', function(event) {
-        event.preventDefault();
-        event.stopPropagation(); 
-        const commentId = this.closest('.edit-comment-form').getAttribute('id').replace('edit-comment-form-', '');
-        document.getElementById(`comment-text-${commentId}`).style.display = 'block';
-        document.getElementById(`edit-comment-form-${commentId}`).style.display = 'none';
-        document.querySelector(`#dropdownMenuButton-${commentId}`).style.top = '';
-        document.querySelector(`.edit-dropdown[data-comment-id="${commentId}"]`).style.top = '';
-    });
-});
-
-        $(document).ready(function() {
-        $('.dropdown-toggle').dropdown();
-    });
+            btn.addEventListener('click', function(event) {
+                event.preventDefault();
+                event.stopPropagation(); 
+                const commentId = this.closest('.edit-comment-form').getAttribute('id').replace('edit-comment-form-', '');
+                document.getElementById(`comment-text-${commentId}`).style.display = 'block';
+                document.getElementById(`edit-comment-form-${commentId}`).style.display = 'none';
+                document.querySelector(`#dropdownMenuButton-${commentId}`).style.top = '';
+                document.querySelector(`.edit-dropdown[data-comment-id="${commentId}"]`).style.top = '';
+            });
+        });
+            $(document).ready(function() {
+            $('.dropdown-toggle').dropdown();
+        });
 
     document.querySelectorAll('.edit-comment-btn').forEach(btn => {
         btn.addEventListener('click', function(event) {
