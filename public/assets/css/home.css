@@ -1061,6 +1061,28 @@ footer .install img {
   color: #555;
 }
 
+.d-none {
+  display: none !important;
+}
+
+.edited {
+  color: #999;
+  font-size: 0.8em;
+  margin-left: 5px;
+}
+
+.batal {
+    position: relative;
+    right: 8px;
+    float: right;
+    padding: 6px 15px;
+    border: none;
+    background: hsl(214, 84%, 56%);
+    color: #eee;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
 /* Media query untuk layar dengan lebar maksimum 1024px */
 @media screen and (max-width: 1024px) {
   .navbar-form {
