@@ -74,7 +74,7 @@
                                 <div class="preview-container">
                                     <input type="hidden" name="foto" value="{{$data->foto}}">
                                     <img src="{{ asset('storage/user/' . ($data->foto ? $data->foto : 'default.jpg')) }}" class="preview" style="width: 100%; height: auto; display: block;" onclick="selectNewImage()">
-                                    <input type="file" class="form-control d-none" id="inputFoto" name="foto" onchange="previewImg(this)" style="display: none;">
+                                    <input type="file" class="form-control d-none" accept=".png, .jpg, .jpeg" id="inputFoto" name="foto" onchange="previewImg(this)" style="display: none;">
                                 </div>
                             </div>
                         </div>
@@ -108,6 +108,23 @@
                 preview.src = oFREvent.target.result;
             }
         }
+
+    var file = input.files[0];
+    var fileName = file.name;
+    var fileExtension = fileName.split('.').pop().toLowerCase();
+
+    if (['png', 'jpg', 'jpeg'].indexOf(fileExtension) === -1) {
+        alert('File harus berformat .png, .jpg, atau .jpeg');
+        input.value = '';
+        return;
+    }
+
+    // Proceed with preview logic
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        document.querySelector('.preview').src = e.target.result;
+    };
+    reader.readAsDataURL(file);
     }
 
     function selectNewImage() {
