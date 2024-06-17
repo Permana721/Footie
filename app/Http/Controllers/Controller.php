@@ -20,7 +20,7 @@ class Controller extends BaseController
     public function showDetail($id)
     {
         $product = Product::findOrFail(decrypt($id));
-        $allProducts = Product::all();
+        $allProducts = Product::inRandomOrder()->take(12)->get();
 
         return view('pelanggan.page.produk', [
             'data' => [$product],
