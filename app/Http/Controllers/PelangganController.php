@@ -44,7 +44,7 @@ class PelangganController extends Controller
     
     public function chinnese()
     {
-        $data = Product::where('category', 'chinese')->get();
+        $data = Product::where('category', 'chinese')->inRandomOrder()->get();
         return view('pelanggan.page.home', [
             'hideSections' => true,
             'data' => $data,
@@ -55,7 +55,7 @@ class PelangganController extends Controller
 
     public function middle()
     {
-        $data = Product::where('category', 'middle')->get();
+        $data = Product::where('category', 'middle')->inRandomOrder()->get();
         return view('pelanggan.page.home', [
             'hideSections' => true,
             'data' => $data,
@@ -66,7 +66,7 @@ class PelangganController extends Controller
 
     public function indonesia()
     {
-        $data = Product::where('category', 'indonesia')->get();
+        $data = Product::where('category', 'indonesia')->inRandomOrder()->get();
         return view('pelanggan.page.home', [
             'hideSections' => true,
             'data' => $data,
@@ -77,7 +77,7 @@ class PelangganController extends Controller
 
     public function japanese()
     {
-        $data = Product::where('category', 'japan')->get();
+        $data = Product::where('category', 'japan')->inRandomOrder()->get();
         return view('pelanggan.page.home', [
             'hideSections' => true,
             'data' => $data,
@@ -88,7 +88,7 @@ class PelangganController extends Controller
 
     public function korean()
     {
-        $data = Product::where('category', 'korean')->get();
+        $data = Product::where('category', 'korean')->inRandomOrder()->get();
         return view('pelanggan.page.home', [
             'hideSections' => true,
             'data' => $data,
@@ -99,7 +99,7 @@ class PelangganController extends Controller
 
     public function non()
     {
-        $data = Product::where('halal', 'haram')->get();
+        $data = Product::where('halal', 'haram')->inRandomOrder()->get();
         return view('pelanggan.page.home', [
             'hideSections' => true,
             'data' => $data,
