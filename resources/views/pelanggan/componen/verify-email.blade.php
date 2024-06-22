@@ -37,7 +37,6 @@
             }
         }
 
-        /* CLIENT-SPECIFIC STYLES */
         body,
         table,
         td,
@@ -56,7 +55,6 @@
             -ms-interpolation-mode: bicubic;
         }
 
-        /* RESET STYLES */
         img {
             border: 0;
             height: auto;
@@ -76,7 +74,6 @@
             width: 100% !important;
         }
 
-        /* iOS BLUE LINKS */
         a[x-apple-data-detectors] {
             color: inherit !important;
             text-decoration: none !important;
@@ -86,7 +83,6 @@
             line-height: inherit !important;
         }
 
-        /* MOBILE STYLES */
         @media screen and (max-width:600px) {
             h1 {
                 font-size: 32px !important;
@@ -94,7 +90,6 @@
             }
         }
 
-        /* ANDROID CENTER FIX */
         div[style*="margin: 16px 0;"] {
             margin: 0 !important;
         }
@@ -102,11 +97,9 @@
 </head>
 
 <body style="background-color: #f4f4f4; margin: 0 !important; padding: 0 !important;">
-    <!-- HIDDEN PREHEADER TEXT -->
     <div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: 'Lato', Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;"> We're thrilled to have you here! Get ready to dive into your new account.
     </div>
     <table border="0" cellpadding="0" cellspacing="0" width="100%">
-        <!-- LOGO -->
         <tr>
             <td bgcolor="#FFA73B" align="center">
                 <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
@@ -149,12 +142,12 @@
                                 </tr>
                             </table>
                         </td>
-                    </tr> <!-- COPY -->
+                    </tr>
                     <tr>
                         <td bgcolor="#ffffff" align="left" style="padding: 0px 30px 0px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
                             <p style="margin: 0;">Email belum terkirim? klik link di bawah ini :</p>
                         </td>
-                    </tr> <!-- COPY -->
+                    </tr>
                     <tr>
                         <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 20px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
                             <p style="margin: 0;"><form method="POST" action="{{ route('verification.resend') }}">
