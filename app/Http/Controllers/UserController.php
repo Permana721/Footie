@@ -102,51 +102,51 @@ class UserController extends Controller
     }
 
     public function update(UserRequest $request, $id)
-{
-    $data = User::findOrFail($id);
+    {
+        $data = User::findOrFail($id);
 
-    $request->validate([
-        'nama' => 'required',
-        'email' => 'required|email|unique:users,email,' . $id,
-        'tlp' => 'required',
-        'role' => 'required',
-        'jenis_kelamin' => 'required',
-        'foto' => 'nullable|',
-    ], [
-        'nama.required' => 'Silahkan isi nama user.',
-        'email.required' => 'Silahkan isi alamat email.',
-        'email.email' => 'Alamat email tidak valid.',
-        'email.unique' => 'Alamat email sudah digunakan.',
-        'tlp.required' => 'Silahkan isi nomor telepon.',
-        'role.required' => 'Silahkan pilih peran user.',
-        'jenis_kelamin.required' => 'Silahkan pilih jenis kelamin user.',
-        'foto.image' => 'File harus berupa gambar.',
-        'foto.max' => 'Ukuran foto tidak boleh lebih dari 2MB.',
-    ]);
+        $request->validate([
+            'nama' => 'required',
+            'email' => 'required|email|unique:users,email,' . $id,
+            'tlp' => 'required',
+            'role' => 'required',
+            'jenis_kelamin' => 'required',
+            'foto' => 'nullable|',
+        ], [
+            'nama.required' => 'Silahkan isi nama user.',
+            'email.required' => 'Silahkan isi alamat email.',
+            'email.email' => 'Alamat email tidak valid.',
+            'email.unique' => 'Alamat email sudah digunakan.',
+            'tlp.required' => 'Silahkan isi nomor telepon.',
+            'role.required' => 'Silahkan pilih peran user.',
+            'jenis_kelamin.required' => 'Silahkan pilih jenis kelamin user.',
+            'foto.image' => 'File harus berupa gambar.',
+            'foto.max' => 'Ukuran foto tidak boleh lebih dari 2MB.',
+        ]);
 
-    if (!$request->filled('password')) {
-        $data->fill($request->except('password'));
-    } else {
-        $data->fill($request->all());
-    }
+        if (!$request->filled('password')) {
+            $data->fill($request->except('password'));
+        } else {
+            $data->fill($request->all());
+        }
 
-    if ($request->hasFile('foto')) {
-        $photo = $request->file('foto');
-        $filename = date('Ymd') . '_' . $photo->getClientOriginalName();
-        $photo->move(public_path('storage/user'), $filename);
-        $data->foto = $filename;
-    }
+        if ($request->hasFile('foto')) {
+            $photo = $request->file('foto');
+            $filename = date('Ymd') . '_' . $photo->getClientOriginalName();
+            $photo->move(public_path('storage/user'), $filename);
+            $data->foto = $filename;
+        }
 
-    $data->name = $request->nama;
-    $data->email = $request->email;
-    $data->password = bcrypt($request->password);
-    $data->tlp = $request->tlp;
-    $data->role = $request->role;
-    $data->jenis_kelamin = $request->jenis_kelamin;
-    $data->save();
+        $data->name = $request->nama;
+        $data->email = $request->email;
+        $data->password = bcrypt($request->password);
+        $data->tlp = $request->tlp;
+        $data->role = $request->role;
+        $data->jenis_kelamin = $request->jenis_kelamin;
+        $data->save();
 
-    return back()->with('success', 'Berhasil mengedit user');
-}
+        return back()->with('success', 'Berhasil mengedit user');
+    }   
 
     public function destroy($id)
     {
