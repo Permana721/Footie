@@ -119,7 +119,6 @@
         return;
     }
 
-    // Proceed with preview logic
     var reader = new FileReader();
     reader.onload = function (e) {
         document.querySelector('.preview').src = e.target.result;
