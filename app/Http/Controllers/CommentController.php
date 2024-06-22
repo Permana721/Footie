@@ -34,8 +34,6 @@ public function update(Request $request, $id)
     $comment = Comment::findOrFail($id);
     $comment->komentar = $request->comment;
     $comment->save();
-
-    // Check if comment was edited
     $edited = $comment->wasChanged();
 
     return response()->json([
