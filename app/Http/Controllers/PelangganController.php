@@ -8,37 +8,35 @@ use Illuminate\Http\Request;
 class PelangganController extends Controller
 {
     public function search(Request $request)
-{
-    $query = Product::query();
-
-    if ($request->has('search') && $request->filled('search')) {
-        $search = $request->search;
-        $query->where('sku', 'LIKE', '%' . $search . '%')
-            ->orWhere('nama_product', 'LIKE', '%' . $search . '%')
-            ->orWhere('category', 'LIKE', '%' . $search . '%')
-            ->orWhere('tipe', 'LIKE', '%' . $search . '%')
-            ->orWhere('alamat_penjual', 'LIKE', '%' . $search . '%')
-            ->orWhere('halal', 'LIKE', '%' . $search . '%');
-    } else {
-        return redirect()->back();
-    }
-
-    $data = $query->paginate(100);
-
-    return view('pelanggan.page.home', [
-        'data' => $data,
-        'title' => 'Cari Produk',
-        'name' => 'Product',
-    ]);
-}
-    public function product($slug)
     {
         $query = Product::query();
 
+        if ($request->has('search') && $request->filled('search')) {
+            $search = $request->search;
+            $query->where('sku', 'LIKE', '%' . $search . '%')
+                ->orWhere('nama_product', 'LIKE', '%' . $search . '%')
+                ->orWhere('category', 'LIKE', '%' . $search . '%')
+                ->orWhere('tipe', 'LIKE', '%' . $search . '%')
+                ->orWhere('alamat_penjual', 'LIKE', '%' . $search . '%')
+                ->orWhere('halal', 'LIKE', '%' . $search . '%');
+        } else {
+            return redirect()->back();
+        }
+
+        $data = $query->paginate(100);
+
+        return view('pelanggan.page.home', [
+            'data' => $data,
+            'title' => 'Cari Produk',
+            'name' => 'Product',
+        ]);
+    }
+    
+    public function product($slug)
+    {
+        $query = Product::query();
         $data = $query;
-
         $like = Like::where('product_id', $data->id)->count();
-
         return $like;
     }
     
