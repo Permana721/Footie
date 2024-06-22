@@ -25,10 +25,9 @@
                     </span></h3>
                     <ul>
                         <li><img src="/assets/img/logo/change-account.png"><a data-bs-toggle="modal" style="cursor: pointer;" data-bs-target="#gantiModal">Ganti Akun</a></li>
-                        
                         <li><img src="/assets/img/logo/question.png"><a href="https://wa.me/+6285724099673?text=Halo%20min,%20saya%20butuh%20bantuan" target="_blank">Bantuan</a></li>
                         <li><img src="/assets/img/logo/admin.png"><a href="/admin/dashboard">Halaman Admin</a></li>
-                        <li><img src="/assets/img/logo/log-out.png"><a href="logout_pelanggan">Keluar</a></li>
+                        <li><img src="/assets/img/logo/log-out.png"><a href="<?php echo e(route('logout.pelanggan')); ?>">Keluar</a></li>
                     </ul>
                 </div>
             </div>
@@ -59,9 +58,8 @@
                     </span></h3>
                     <ul>
                         <li><img src="/assets/img/logo/change-account.png"><a data-bs-toggle="modal" style="cursor: pointer;" data-bs-target="#gantiModal">Ganti Akun</a></li>
-                        
                         <li><img src="/assets/img/logo/question.png"><a href="https://wa.me/+6285724099673?text=Halo%20min,%20saya%20butuh%20bantuan" target="_blank">Bantuan</a></li>
-                        <li><img src="/assets/img/logo/log-out.png"><a href="logout_pelanggan">Keluar</a></li>
+                        <li><img src="/assets/img/logo/log-out.png"><a href="<?php echo e(route('logout.pelanggan')); ?>">Keluar</a></li>
                     </ul>
                 </div>
             </div>
