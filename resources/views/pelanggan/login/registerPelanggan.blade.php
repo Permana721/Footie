@@ -30,9 +30,6 @@
                         <div class="col-sm-9">
                             <div class="input-group">
                                 <input type="password" class="form-control" name="password" id="password" placeholder="Silahkan masukkan password anda">
-                                {{-- <button id="togglePassword" type="button" class="btn btn-outline-secondary eye" onclick="togglePasswordVisibilityRegister()">
-                                    <i id="eyeIconRegister" class="fa fa-eye-slash" aria-hidden="true"></i>
-                                </button> --}}
                             </div>
                         </div>
                     </div>
