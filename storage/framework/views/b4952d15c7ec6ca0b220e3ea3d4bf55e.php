@@ -112,7 +112,7 @@
         <?php endif; ?>
         <div class="pro-container">
             <?php $__currentLoopData = $allProducts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $p): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <div class="pro" onclick="window.location.href='<?php echo e(route('showDetail', encrypt($p->id))); ?>'">
+                <div class="pro" onclick="window.location.href='<?php echo e(route('showDetail', [$p->id])); ?>'">
                     <img src="<?php echo e(asset('storage/product/' . $p->foto)); ?>" alt="">
                     <div class="des">
                         <span><?php echo e($p->alamat_penjual); ?></span>
