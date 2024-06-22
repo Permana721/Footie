@@ -14,7 +14,6 @@ class LikeController extends Controller
         $existing_like = Like::where('product_id', $id)
                             ->where('user_id', $user_id)
                             ->first();
-
         $liked = false;
         if ($existing_like) {
             $existing_like->delete();
