@@ -36,7 +36,6 @@
     </section>
     
     @include('pelanggan.login.loginPelanggan')
-    {{-- @include('pelanggan.login.editPelanggan') --}}
     @include('pelanggan.login.gantiAkun')
     @include('pelanggan.login.registerPelanggan')
 
