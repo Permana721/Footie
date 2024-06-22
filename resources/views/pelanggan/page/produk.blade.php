@@ -111,7 +111,7 @@
         @endif
         <div class="pro-container">
             @foreach ($allProducts as $p)
-                <div class="pro" onclick="window.location.href='{{ route('showDetail', encrypt($p->id)) }}'">
+                <div class="pro" onclick="window.location.href='{{ route('showDetail', [$p->id]) }}'">
                     <img src="{{ asset('storage/product/' . $p->foto) }}" alt="">
                     <div class="des">
                         <span>{{ $p->alamat_penjual }}</span>
@@ -136,10 +136,9 @@
 
 
     <script>
-         $(document).ready(function() {
-        moment.locale('id');  // Set locale to Indonesian
+        $(document).ready(function() {
+        moment.locale('id');
 
-        // Handle form submission for new comments and edits
         $('#new-comment-form').on('submit', function(e) {
             e.preventDefault();
 
@@ -205,25 +204,18 @@
             });
         });
 
-        // Handle edit button click
         $(document).on('click', '.edit-comment-btn', function(e) {
             e.preventDefault();
 
             let commentId = $(this).data('comment-id');
             let commentText = $(this).data('comment-text');
-
-            // Hide all edit forms
             $('.edit-comment-form').hide();
-
-            // Show current edit form
             $(`#edit-comment-form-${commentId}`).show();
-
             $('#new-comment').val(commentText);
             $('#edit-comment-id').val(commentId);
             $('#cancel-edit').show();
         });
 
-        // Handle cancel edit button click
         $('#cancel-edit').on('click', function() {
             $('.edit-comment-form').hide();
             $('#new-comment-form')[0].reset();

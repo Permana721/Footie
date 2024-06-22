@@ -19,7 +19,7 @@ class Controller extends BaseController
 
     public function showDetail($id)
     {
-        $product = Product::findOrFail(decrypt($id));
+        $product = Product::findOrFail($id);
         $allProducts = Product::inRandomOrder()->take(12)->get();
 
         return view('pelanggan.page.produk', [
@@ -37,17 +37,16 @@ class Controller extends BaseController
     }
 
     public function admin()
-        {
-            $dataProduct = product::count();
-            $dataUser = User::count();
-            return view('admin.page.dashboard', [
-                'name'          => "Dashboard",
-                'title'         => 'Admin Dashboard',
-                'totalProduct'  => $dataProduct,
-                'totalUser'  => $dataUser,
-            ]);
-        }
-
+    {
+        $dataProduct = product::count();
+        $dataUser = User::count();
+        return view('admin.page.dashboard', [
+            'name'          => "Dashboard",
+            'title'         => 'Admin Dashboard',
+            'totalProduct'  => $dataProduct,
+            'totalUser'  => $dataUser,
+        ]);
+    }
 
     public function userManagement()
     {

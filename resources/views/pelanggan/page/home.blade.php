@@ -126,7 +126,7 @@
                 </div>
             @else
                 @foreach ($data as $key => $p)
-                    <div class="pro {{ $key >= 8 ? 'd-none' : '' }}" onclick="redirectToDetail('{{ Auth::check() }}', '{{ route('showDetail', encrypt($p->id) ) }}')" data-id="{{ $p->id }}">
+                    <div class="pro {{ $key >= 8 ? 'd-none' : '' }}" onclick="redirectToDetail('{{ Auth::check() }}', '{{ route('showDetail', [ $p->id ]) }}')" data-id="{{ $p->id }}">
                         <img src="{{ asset('storage/product/' . $p->foto) }}" alt="">
                         <div class="des">
                             <span>{{ $p->alamat_penjual }}</span>
@@ -135,7 +135,7 @@
                         </div>
                         <img src="{{ $p->halal == 'halal' ? asset('assets/img/halal-haram/halal.png') : asset('assets/img/halal-haram/haram.png') }}" alt="" class="halal-logo">
                     </div>
-                @endforeach
+                @endforeach        
             @endif
         </div>
         @if ($data->count() > 8)
