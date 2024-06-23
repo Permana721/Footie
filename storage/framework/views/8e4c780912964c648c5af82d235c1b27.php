@@ -1,4 +1,3 @@
-<!-- Modal -->
 <link rel="stylesheet" href="/assets/css/modal.css">
 <div class="modal fade" id="gantiModal" tabindex="-1" aria-labelledby="gantiModalLabel" aria-hidden="true">
     <div class="modal-dialog">
