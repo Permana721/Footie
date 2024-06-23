@@ -1083,6 +1083,131 @@ footer .install img {
     border-radius: 3px;
 }
 
+.navbar-form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.navbar-form-search {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#history-list li {
+  display: flex;
+}
+
+.navbar-form-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.history-container {
+  position: absolute;
+  top: 100px;
+  background-color: white;
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  z-index: 10;
+}
+
+.history-container h3 {
+  margin-top: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#history-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+#history-list li {
+  padding: 5px 0;
+  cursor: pointer;
+}
+
+#history-list li:hover {
+  text-decoration: underline;
+}
+
+#clear-history {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+#clear-history:hover {
+  background-color: #d32f2f;
+}
+
+#recent-viewed-list {
+  display: flex;
+  gap: 10px;
+}
+
+#recent-viewed-list img {
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+.autocomplete-suggestions {
+  display: block;
+}
+
+.autocomplete-suggestions li {
+  padding: 5px 0;
+  cursor: pointer;
+}
+
+.autocomplete-suggestions li:hover {
+  text-decoration: underline;
+}
+
+.delete-button {
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0;
+  margin-left: auto;
+  margin-left: 10px; 
+}
+
+.history-container li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.delete-button {
+  background: transparent;
+  border: none;
+  color: red;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0;
+}
+
+
 /* Media query untuk layar dengan lebar maksimum 1024px */
 @media screen and (max-width: 1024px) {
   .navbar-form {
