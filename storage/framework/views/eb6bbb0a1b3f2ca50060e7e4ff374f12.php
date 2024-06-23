@@ -30,7 +30,6 @@
                         <div class="col-sm-9">
                             <div class="input-group">
                                 <input type="password" class="form-control" name="password" id="password" placeholder="Silahkan masukkan password anda">
-                                
                             </div>
                         </div>
                     </div>
