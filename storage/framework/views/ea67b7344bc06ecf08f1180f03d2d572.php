@@ -126,7 +126,7 @@
                 </div>
             <?php else: ?>
                 <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $p): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <div class="pro <?php echo e($key >= 8 ? 'd-none' : ''); ?>" onclick="redirectToDetail('<?php echo e(Auth::check()); ?>', '<?php echo e(route('showDetail', [ $p->id ])); ?>')" data-id="<?php echo e($p->id); ?>">
+                    <div class="pro <?php echo e($key >= 8 ? 'd-none' : ''); ?>" onclick="redirectToDetail('<?php echo e(Auth::check()); ?>', '<?php echo e(route('showDetail', [ $p->id ])); ?>', '<?php echo e($p->nama_product); ?>', '<?php echo e(asset('storage/product/' . $p->foto)); ?>')" data-id="<?php echo e($p->id); ?>">
                         <img src="<?php echo e(asset('storage/product/' . $p->foto)); ?>" alt="">
                         <div class="des">
                             <span><?php echo e($p->alamat_penjual); ?></span>
@@ -135,7 +135,7 @@
                         </div>
                         <img src="<?php echo e($p->halal == 'halal' ? asset('assets/img/halal-haram/halal.png') : asset('assets/img/halal-haram/haram.png')); ?>" alt="" class="halal-logo">
                     </div>
-                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>        
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             <?php endif; ?>
         </div>
         <?php if($data->count() > 8): ?>
