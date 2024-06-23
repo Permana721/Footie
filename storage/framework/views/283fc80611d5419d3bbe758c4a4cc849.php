@@ -36,7 +36,6 @@
     </section>
     
     <?php echo $__env->make('pelanggan.login.loginPelanggan', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-    
     <?php echo $__env->make('pelanggan.login.gantiAkun', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <?php echo $__env->make('pelanggan.login.registerPelanggan', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
