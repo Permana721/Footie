@@ -87,9 +87,9 @@
             <li><a class="eli-guest" href="https://www.tokopedia.com/order-list?status=dikirim" target="_blank">LacakPesanan</a></li>
         </ul>
         <form action="{{ url('/search') }}" class="navbar-form">
-            <input type="search" autocomplete="off" placeholder="Cari di LahAda" class="navbar-form-search" name="search" value="{{ Request::get('search') }}" aria-label="search" id="search-input">
-            <button class="navbar-form-btn transparent-button" type="submit">
-                <li><i class="fa-solid fa-magnifying-glass kaca"></i></li>
+            <input type="search" placeholder="Cari di LahAda" class="navbar-form-search-guest" name="search" value="{{ Request::get('search') }}" aria-label="search">
+            <button class="navbar-form-btn transparent-button" type="{{ Request::get('search') ? 'submit' : 'button' }}" >
+                <li><i class="fa-solid fa-magnifying-glass kaca-guest"></i></li>
             </button>
         </form>
             <button type="button" class="normall" data-bs-toggle="modal" data-bs-target="#exampleModal">Masuk</button>

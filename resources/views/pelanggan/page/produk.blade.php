@@ -25,16 +25,18 @@
             <div class="single-pro-details">
                 <h6><i class="fa-solid fa-location-dot"></i>   {{  $p->alamat_penjual }}</h6>
                 <h4>{{ $p->nama_product }}</h4>
-                <h2 class="harga">Rp {{ $p->harga }}</h2>
-                <div class="favorit">
-                    <form action="{{ route('like', ['id' => $p->id]) }}" method="POST" class="like-form">
-                        @csrf
-                        <button type="submit" style="text-decoration:none; border:none; background-color:transparent;" class="like-button" data-product-id="{{ $p->id }}">
-                            <span><i class="fa-solid fa-heart hati @if($p->likedBy(auth()->user())) red-heart @endif"></i> <span class="like-count">{{ $p->likes()->count() }}</span></span>
-                        </button>
-                    </form>
+                <div class="relative">
+                    <h2 class="harga">Rp {{ $p->harga }}</h2>
+                    <div class="favorit">
+                        <form action="{{ route('like', ['id' => $p->id]) }}" method="POST" class="like-form">
+                            @csrf
+                            <button type="submit" style="text-decoration:none; border:none; background-color:transparent;" class="like-button" data-product-id="{{ $p->id }}">
+                                <span><i class="fa-solid fa-heart hati @if($p->likedBy(auth()->user())) red-heart @endif"></i> <span class="like-count">{{ $p->likes()->count() }}</span></span>
+                            </button>
+                        </form>
+                    </div>
                 </div>
-                <button class="normal" style="margin-top: 10px;" onclick="window.open('{{ $p->link }}', '_blank')">Beli Sekarang</button>
+                <button class="normal" onclick="window.open('{{ $p->link }}', '_blank')">Beli Sekarang</button>
                 <h4>Deskripsi Produk</h4>
                     <span>
                         {{ $p->deskripsi }}

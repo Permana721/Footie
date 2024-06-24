@@ -48,13 +48,7 @@ INSERT INTO `comments` (`id`, `product_id`, `user_id`, `user_name`, `user_foto`,
 (26, 18, 10, 'Permana', '20240311_kopi-turki.jpg', 'Enak sih ini', '2024-03-14 23:09:29', '2024-03-14 23:09:46'),
 (27, 19, 10, 'Permana', '20240616_20240408_4.png', 'haloo', '2024-06-16 06:17:53', '2024-06-16 06:17:53');
 
--- --------------------------------------------------------
-<<<<<<< Updated upstream
-mfootie_dbfootie_dbfootie_dbodel_has_permissionsusers
-=======
->>>>>>> Stashed changes
---
--- Struktur dari tabel `failed_jobs`
+
 --
 
 CREATE TABLE `failed_jobs` (
