@@ -49,7 +49,7 @@ INSERT INTO `comments` (`id`, `product_id`, `user_id`, `user_name`, `user_foto`,
 (27, 19, 10, 'Permana', '20240616_20240408_4.png', 'haloo', '2024-06-16 06:17:53', '2024-06-16 06:17:53');
 
 -- --------------------------------------------------------
-model_has_permissionsusers
+mfootie_dbfootie_dbfootie_dbodel_has_permissionsusers
 --
 -- Struktur dari tabel `failed_jobs`
 --
