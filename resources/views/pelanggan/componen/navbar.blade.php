@@ -16,7 +16,7 @@
             </form>
             <div class="history-container" id="history-container" style="display: none;">
                 <h3>Terakhir Dicari</h3>
-                <ul id="history-list"><span id="histori-list"></span></ul>
+                <ul id="history-list"><span class="histori-list" id="histori-list"></span></ul>
                 <h3>Terakhir Dilihat</h3>
                 <div id="recent-viewed-list"></div>
             </div>
