@@ -34,7 +34,7 @@
                         </button>
                     </form>
                 </div>
-                <button class="normal" onclick="window.open('{{ $p->link }}', '_blank')">Beli Sekarang</button>
+                <button class="normal" style="margin-top: 10px;" onclick="window.open('{{ $p->link }}', '_blank')">Beli Sekarang</button>
                 <h4>Deskripsi Produk</h4>
                     <span>
                         {{ $p->deskripsi }}
