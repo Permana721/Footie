@@ -789,13 +789,6 @@ footer .install img {
   cursor: pointer;
 }
 
-.favorit {
-  position: relative;
-  left: 23.5%;
-  bottom: 38px;
-  cursor: pointer;
-}
-
 .hati.red-heart {
   color: red;
 }
@@ -1090,12 +1083,6 @@ footer .install img {
   margin-bottom: 20px;
 }
 
-.navbar-form-search {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
 
 #history-list li {
   display: flex;
@@ -1266,11 +1253,6 @@ footer .install img {
   #product1 .pro .halal-logo {
     left: 12rem;
     bottom: 1rem;
-  }
-
-  .favorit {
-    left: 40%;
-    bottom: 40px;
   }
 
   .dropdown {
@@ -1692,7 +1674,7 @@ footer .install img {
   }
 
   .dropdown {
-    left: 36rem;
+    left: 34rem;
   }
 
   button.normall {
