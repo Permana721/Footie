@@ -25,14 +25,16 @@
             <div class="single-pro-details">
                 <h6><i class="fa-solid fa-location-dot"></i>   <?php echo e($p->alamat_penjual); ?></h6>
                 <h4><?php echo e($p->nama_product); ?></h4>
-                <h2 class="harga">Rp <?php echo e($p->harga); ?></h2>
-                <div class="favorit">
-                    <form action="<?php echo e(route('like', ['id' => $p->id])); ?>" method="POST" class="like-form">
-                        <?php echo csrf_field(); ?>
-                        <button type="submit" style="text-decoration:none; border:none; background-color:transparent;" class="like-button" data-product-id="<?php echo e($p->id); ?>">
-                            <span><i class="fa-solid fa-heart hati <?php if($p->likedBy(auth()->user())): ?> red-heart <?php endif; ?>"></i> <span class="like-count"><?php echo e($p->likes()->count()); ?></span></span>
-                        </button>
-                    </form>
+                <div class="relative">
+                    <h2 class="harga">Rp <?php echo e($p->harga); ?></h2>
+                    <div class="favorit">
+                        <form action="<?php echo e(route('like', ['id' => $p->id])); ?>" method="POST" class="like-form">
+                            <?php echo csrf_field(); ?>
+                            <button type="submit" style="text-decoration:none; border:none; background-color:transparent;" class="like-button" data-product-id="<?php echo e($p->id); ?>">
+                                <span><i class="fa-solid fa-heart hati <?php if($p->likedBy(auth()->user())): ?> red-heart <?php endif; ?>"></i> <span class="like-count"><?php echo e($p->likes()->count()); ?></span></span>
+                            </button>
+                        </form>
+                    </div>
                 </div>
                 <button class="normal" onclick="window.open('<?php echo e($p->link); ?>', '_blank')">Beli Sekarang</button>
                 <h4>Deskripsi Produk</h4>
@@ -137,10 +139,9 @@
 
 
     <script>
-         $(document).ready(function() {
-        moment.locale('id');  // Set locale to Indonesian
+        $(document).ready(function() {
+        moment.locale('id');
 
-        // Handle form submission for new comments and edits
         $('#new-comment-form').on('submit', function(e) {
             e.preventDefault();
 
@@ -206,25 +207,18 @@
             });
         });
 
-        // Handle edit button click
         $(document).on('click', '.edit-comment-btn', function(e) {
             e.preventDefault();
 
             let commentId = $(this).data('comment-id');
             let commentText = $(this).data('comment-text');
-
-            // Hide all edit forms
             $('.edit-comment-form').hide();
-
-            // Show current edit form
             $(`#edit-comment-form-${commentId}`).show();
-
             $('#new-comment').val(commentText);
             $('#edit-comment-id').val(commentId);
             $('#cancel-edit').show();
         });
 
-        // Handle cancel edit button click
         $('#cancel-edit').on('click', function() {
             $('.edit-comment-form').hide();
             $('#new-comment-form')[0].reset();
