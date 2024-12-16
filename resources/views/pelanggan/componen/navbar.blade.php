@@ -156,8 +156,6 @@
                 .filter(item => item.toLowerCase().includes(query.toLowerCase()))
                 .forEach(item => {
                     let li = document.createElement('li');
-
-                    // Create span for the search term
                     let span = document.createElement('span');
                     span.textContent = item;
                     span.onclick = function() {
@@ -165,7 +163,6 @@
                         document.querySelector('.navbar-form').submit();
                     };
 
-                    // Create delete button
                     let deleteButton = document.createElement('button');
                     deleteButton.innerHTML = '&times;';
                     deleteButton.className = 'delete-button';
@@ -190,7 +187,7 @@
         function saveToViewedHistory(name, image, url) {
             let history = JSON.parse(localStorage.getItem('viewedHistory')) || [];
             history.push({ name, image, url });
-            if (history.length > 5) history.shift(); // Keep only latest 5 items
+            if (history.length > 5) history.shift();
             localStorage.setItem('viewedHistory', JSON.stringify(history));
             loadViewedHistory();
         }

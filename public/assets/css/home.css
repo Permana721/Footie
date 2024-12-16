@@ -1694,7 +1694,6 @@ footer .install img {
   }
 }
 
-/* untuk ukuran layar 24/27 inch 1920*1080p */
 @media screen and (min-width: 1441px) and (max-width: 1920px) and (max-height: 1080px) {
   .ac-name {
     bottom: 38px;
@@ -1818,4 +1817,62 @@ footer .install img {
     position: relative;
     left: 38rem;
   }
+}
+
+
+/* resolusi mobile */
+@media screen and (max-width: 360px) and (max-height: 800px) {
+  #header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 150px;
+    background: #fbfcff;
+    height: 80px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .navbar-form {
+    position: relative;
+    right: 440px;
+    top: 20px;
+    width: 20%;
+    border: none;
+  }
+
+  .logo-atas-guest {
+    top: -100px;
+  }
+
+  .navbar-form-search-guest {
+    border: 1px solid hsl(214, 84%, 56%);
+    width: 270px;
+  }
+
+  button.normall {
+    right: 0;
+    left: 0;
+    top: 0;
+  }
+
+  .normal1 {
+    right: 0;
+    left: 0;
+    top: 0;
+  }
+
+  #header .normall {
+    left: -27rem;
+  }
+
+  .kaca-guest {
+    bottom: 43px;
+    right: 248px;
+  }
+
 }
