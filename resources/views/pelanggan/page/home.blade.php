@@ -78,7 +78,7 @@
             <a onclick="redirectToDetail({{ Auth::check() ? 'true' : 'false' }}, '{{ route('japanese') }}')">
                 <div class="fe-box" data-category="japanese">
                     <img src="/assets/img/fitur/japan.png" alt="">
-                    <h6>Japanese Food</h6>
+                    <h6>Japan Food</h6>
                 </div>
             </a>
             <a onclick="redirectToDetail({{ Auth::check() ? 'true' : 'false' }}, '{{ route('korean') }}')">
@@ -215,6 +215,65 @@
         headers: {
             "X-CSRF-TOKEN" : $('meta[name="csrf-token"]').attr("content"),
         }
+    });
+
+    const mediaQuery = window.matchMedia("(max-width: 360px) and (max-height: 800px)");
+
+    function handleMediaQueryChange(e) {
+        const featureElement = document.getElementById("feature");
+        if (e.matches) {
+            featureElement.classList.remove("section-p1");
+        } else {
+            featureElement.classList.add("section-p1");
+        }
+    }
+
+    handleMediaQueryChange(mediaQuery);
+
+    mediaQuery.addListener(handleMediaQueryChange);
+
+    function applyMinWidthForSmallScreens() {
+        const mediaQuery = window.matchMedia("(max-width: 360px) and (max-height: 800px)");
+
+        const productElements = document.querySelectorAll('.pro');
+
+        if (mediaQuery.matches) {
+            productElements.forEach(function (product) {
+                product.style.minWidth = "140px";
+            });
+        } else {
+            productElements.forEach(function (product) {
+                product.style.minWidth = "";
+            });
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", applyMinWidthForSmallScreens);
+
+    window.addEventListener("resize", applyMinWidthForSmallScreens);
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const proContainer = document.querySelector("#product1 .pro-container");
+
+        function applyGridLayout() {
+            if (window.innerWidth <= 360 && window.innerHeight <= 800) {
+                proContainer.style.display = "grid";
+                proContainer.style.gridTemplateColumns = "repeat(2, 1fr)";
+                proContainer.style.gap = "20px";
+                proContainer.style.padding = "20px";
+                proContainer.style.right = "7rem";
+                proContainer.style.position = "relative";
+            } else {
+                proContainer.style.display = "";
+                proContainer.style.gridTemplateColumns = "";
+                proContainer.style.gap = "";
+                proContainer.style.padding = "";
+            }
+        }
+
+        applyGridLayout();
+
+        window.addEventListener("resize", applyGridLayout);
     });
 </script>
 
