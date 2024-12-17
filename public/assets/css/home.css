@@ -1875,4 +1875,62 @@ footer .install img {
     right: 248px;
   }
 
+  #hero {
+    visibility: hidden;
+  }
+
+  .kategori {
+    position: relative;
+    bottom: 45rem;
+    border: none;
+  }
+
+  .kategori h2 {
+    visibility: hidden;
+  }
+
+  #feature .fe-box {
+    width: 77px;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .fe-box {
+    position: relative;
+    margin-right: 2rem; 
+    margin-left: 5rem;
+  }
+
+  .fe-box:last-child {
+    margin-right: 0; 
+  }
+
+  #feature .fe-box img {
+    width: 60px;
+  }
+
+  #feature.section-p1 {
+    display: block; 
+    padding: 80px 100px;
+    margin: 100px;
+  }
+
+  #feature .fe-box:hover {
+    box-shadow: none;
+  }
+
+  .recomen {
+    position: relative;
+    bottom: 47rem;
+  }
+
+  #product1 .pro {
+    bottom: 50rem;
+  }
+
+  #product1 .pro .halal-logo {
+    visibility: hidden;
+  }
 }
