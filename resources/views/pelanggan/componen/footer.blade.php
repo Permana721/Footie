@@ -49,3 +49,30 @@
         <img src="/assets/img/bayar/pay.png" alt="" class="bayar">
     </div>
 </footer>
+
+<script>
+    // Function to apply the style when the media query matches
+    function adjustAccountSection() {
+        const mediaQuery = window.matchMedia("(max-width: 360px) and (max-height: 800px)");
+        const accountSection = document.querySelector('footer .col:nth-child(2)'); // Select the 3rd column
+        
+        // Apply styles if media query matches
+        if (mediaQuery.matches) {
+            if (accountSection) {
+                accountSection.style.position = "relative";
+                accountSection.style.right = "170px";
+            }
+        } else {
+            // Remove the style if the media query does not match
+            if (accountSection) {
+                accountSection.style.left = ""; // Reset to default
+            }
+        }
+    }
+
+    // Run on initial load
+    adjustAccountSection();
+
+    // Listen for changes in screen size
+    window.addEventListener('resize', adjustAccountSection);
+</script>
