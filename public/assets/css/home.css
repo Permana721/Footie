@@ -1227,8 +1227,8 @@ footer .install img {
 
   .action {
     position: relative;
-    left: 37px;
-    right: 200px;
+    right: 0;
+    left: 20rem;
   }
 
   .eli-guest {
@@ -1849,6 +1849,11 @@ footer .install img {
     top: -100px;
   }
 
+  .navbar-form-search {
+    border: 1px solid hsl(214, 84%, 56%);
+    width: 240px;
+  }
+
   .navbar-form-search-guest {
     border: 1px solid hsl(214, 84%, 56%);
     width: 270px;
@@ -1876,12 +1881,13 @@ footer .install img {
   }
 
   #hero {
-    visibility: hidden;
+    display: none;
   }
 
   .kategori {
     position: relative;
-    bottom: 45rem;
+    /* bottom: 45rem; */
+    margin-bottom: -10px;
     border: none;
   }
 
@@ -1923,14 +1929,41 @@ footer .install img {
 
   .recomen {
     position: relative;
-    bottom: 47rem;
-  }
-
-  #product1 .pro {
-    bottom: 50rem;
+    margin-bottom: 1px;
   }
 
   #product1 .pro .halal-logo {
     visibility: hidden;
+  }
+
+  .loadMore {
+    left: 5px;
+  }
+
+  footer .col {
+    position: relative;
+    right: 50px;
+  }
+
+  footer .lp {
+    visibility: hidden;
+  }
+
+  .action .menu {
+    position: relative;
+    bottom: 10rem;
+    /* left: 50rem;
+    right: -50rem; */
+  }
+
+  .ac-name {
+    left: 0;
+    right: -100rem;
+  }
+
+  .swal2-icon.welcome img {
+    width: 10%;
+    height: 10%;
+    object-fit: contain; 
   }
 }
