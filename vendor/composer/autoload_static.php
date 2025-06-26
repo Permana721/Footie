@@ -560,6 +560,7 @@ class ComposerStaticInit3e08132a85c07a86c94c65c75d98d605
     );
 
     public static $classMap = array (
+        'App\\Console\\Commands\\ClearCache' => __DIR__ . '/../..' . '/app/Console/Commands/ClearCache.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Auth\\AuthenticatedSessionController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/AuthenticatedSessionController.php',
