@@ -1,4 +1,22 @@
+/vendor
+/node_modules
+/storage/*.key
+/storage/*.txt
+/storage/logs/*
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
 .env
-.env.backup
-node_modules/
-.ddev
+.env.*  # untuk environment lain seperti .env.testing, .env.staging
+bootstrap/cache/*.php
+storage/telescope/*
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.bak
+/public/hot
+/public/storage
+/public/mix-manifest.json
+/public/js/*
+/public/css/*
