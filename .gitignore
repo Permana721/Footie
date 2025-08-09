@@ -1,5 +1,6 @@
 /vendor
 /node_modules
+/bootstrap
 /public/storage
 /storage/*.key
 .env
@@ -9,6 +10,7 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+/storage
 /storage/logs
 /storage/framework/cache
 /storage/framework/sessions
